@@ -1,0 +1,13 @@
+<div class="uk-container">
+
+<article class="uk-article">
+    <% @summary.each do |t| %>
+    <h1 class="uk-article-title" style="color: lightblue;><a class="uk-link-reset">Professional Summary</a></h1>
+
+    <p class="uk-article-meta" style="color: black;"><%= t.description %></p>
+<!-- 
+        <a <%= link_to "Edit", edit_introduction_path(t) %></a><br>
+        <a  <%= link_to "Remove", introductions_path(t), method: :delete, data: { confirm: "Are you sure?" } %></a> -->
+    <% end %>
+</article>  
+</div>

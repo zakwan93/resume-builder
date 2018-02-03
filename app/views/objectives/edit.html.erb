@@ -1,0 +1,17 @@
+<div class= "uk-container uk-background-muted uk-padding uk-panel" style="padding: 50px;margin-top: 150px;">
+    <h2> Add your Summary here </h2><br>
+        <%= form_for @objective do |f| %>
+
+            <%= f.hidden_field :resume_id, :value => @user_resume %>
+            
+            <label class="uk-form-label" for="form-stacked-text">
+               Objective
+            </label>
+            <div class="uk-form-controls">
+                <%= f.text_field :description %>
+            </div>
+            <div class="waves-effect waves-light btn">
+              <%= submit_tag "Add" %>
+            </div>
+        <% end %>
+</div>

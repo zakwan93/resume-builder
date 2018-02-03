@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ResumeBuilder</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/css/uikit.min.css" />
+
+  </head>
+
+  <body class="uk-container">
+
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+  	
+ <nav class="uk-navbar-container" uk-navbar>
+    <div class="uk-navbar-right">
+    <ul class="uk-navbar-nav">
+      
+          <% if user_signed_in? %>
+            <div class="uk-navbar-left">
+            <li>Logged in as <strong><%= current_user.email %></strong>.</li>
+          </div>
+            <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> </li>
+            <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+          <% else %>
+            <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> </li>|
+           <li> <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+          <% end %>
+    </ul>
+</nav>
+    <%= yield %>
+  
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/js/uikit-icons.min.js"></script>
+  </body>
+</html>

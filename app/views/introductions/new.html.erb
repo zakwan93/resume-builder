@@ -1,0 +1,52 @@
+
+<div class= "uk-container uk-background-muted uk-padding uk-panel" style="padding: 50px;margin-top: 150px;">
+    <h2> Add your intro here </h2><br>
+        <%= form_for @introductions do |f| %>
+
+            <%= f.hidden_field :resume_id, :value => @user_resume %>
+             
+        
+            <label class="uk-form-label" for="form-stacked-text">
+                Name
+            </label>
+            <div class="uk-form-controls">
+                <%= f.text_field :name %>
+            </div>
+
+            <label class="uk-form-label" for="form-stacked-text">
+                Title
+            </label>
+            <div class="uk-form-controls">
+                <%= f.text_field :title %>
+            </div>
+
+            <label class="uk-form-label" for="form-stacked-text">
+                address
+            </label>
+            <div class="uk-form-controls">
+                <%= f.text_field :address %>
+            </div>
+
+            <label class="uk-form-label" for="form-stacked-text">
+                Phone
+            </label>
+            <div class="uk-form-controls">
+                <%= f.text_field :phone %>
+            </div>
+
+            <label class="uk-form-label" for="form-stacked-text">
+                Email
+            </label>
+            <div class="uk-form-controls">
+                <%= f.text_field :email %>
+            </div>
+
+            <div class="waves-effect waves-light btn">
+              <%= submit_tag "Add" %>
+            </div>
+
+
+
+        <% end %>
+        
+</div>

@@ -1,0 +1,16 @@
+	
+
+<h1> Start Building your resume </h1>
+
+<%= form_for Resume.create do |f| %>
+
+             <%= f.hidden_field :user_id, :value => current_user.id  %>
+             <%= submit_tag "Add" %>
+<% end %>
+
+
+
+  <%= render partial: "shared/introduction", :collection => @introductions %>
+  <%= render partial: "shared/summary", :collection => @summary %>
+  <%= render partial: "shared/skills", :collection => @skills %>
+

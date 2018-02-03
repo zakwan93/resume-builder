@@ -1,0 +1,85 @@
+<div class="uk-container uk-background-muted uk-padding uk-panel">
+	<h1 class="uk-text-center">Homepage</h1>
+</div>
+	
+	<hr class="uk-divider-icon">
+
+	<div class="uk-container">
+		<div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
+			<div>
+		        <div class="uk-card uk-card-default uk-card-body">
+		            <h3 class="uk-card-title">Introduction</h3>
+		            <p>
+				         <% if @user_resume_introduction == nil %>
+						 	<h3> 
+						 		<a <%= link_to 'Incomplete', new_introduction_path %> </a>
+						 	</h3>
+						 	<% else %>
+
+						 	 <a <%= link_to "Edit", edit_introduction_path(:id => @current_user.id) %></a> |
+						 	 <a  <%= link_to "Remove", introductions_path(:id => @current_user.id), method: :delete, data: { confirm: "Are you sure?" } %></a>
+						 <% end %>
+		            </p>
+		        </div>
+		    </div>
+
+		    <div>
+		        <div class="uk-card uk-card-default uk-card-body">
+		            <h3 class="uk-card-title">Objective</h3>
+		            <p>
+				<% if @user_resume_objective == nil %>
+			 			<h3> 
+			 				<a <%= link_to 'Incomplete', new_objective_path %> </a>
+			 			</h3>
+			 		<% else %>
+
+			 	 	<a <%= link_to "Edit", edit_objective_path(:id => @current_user.id) %></a> |
+			 	 	<a  <%= link_to "Remove", objective_path(:id => @current_user.id), method: :delete, data: { confirm: "Are you sure?" } %></a>
+			 	<% end %>
+		            </p>
+		        </div>
+		    </div>
+
+
+		    <div>
+		        <div class="uk-card uk-card-default uk-card-body">
+		            <h3 class="uk-card-title">Skills</h3>
+		      		<p>
+						<% if @user_resume_skills == nil %>
+					 		<h3> 
+					 			<a <%= link_to 'Incomplete', new_skill_path %> </a>
+					 		</h3>
+					 	<% elsif @user_resume_skills == @skills %>
+					 		 <a <%= link_to 'add more', new_skill_path %> </a>
+							 <a <%= link_to "Edit", edit_skill_path(:id => @current_user.id) %></a> |
+					 	 	 <a  <%= link_to "Remove", skill_path(:id => @current_user.id), method: :delete, data: { confirm: "Are you sure?" } %></a>
+					 	<% else %>
+
+					 		<a <%= link_to "Edit", edit_skill_path(:id => @current_user.id) %></a> |
+					 	 	 <a  <%= link_to "Remove", skill_path(:id => @current_user.id), method: :delete, data: { confirm: "Are you sure?" } %></a>
+					 	<% end %>
+				    </p>
+		        </div>
+		    </div>
+
+		    <div>
+		        <div class="uk-card uk-card-default uk-card-body">
+		            <h3 class="uk-card-title">Experiences</h3>
+		      		<p>
+						<% if @user_resume_experiences == nil %>
+					 		<h3> 
+					 			<a <%= link_to 'Incomplete', new_experience_path %> </a>
+					 		</h3>
+					 	<% else %>
+					 		 <a <%= link_to 'Add more', new_experience_path %> </a> |
+							 <a <%= link_to "Edit", edit_experience_path(:id => @current_user.id) %></a> |
+					 	 	 <a  <%= link_to "Remove", experience_path(:id => @current_user.id), method: :delete, data: { confirm: "Are you sure?" } %></a>
+					 	<% end %>
+				    </p>
+		        </div>
+		    </div>
+			
+		</div>
+	</div>
+
+

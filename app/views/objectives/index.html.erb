@@ -1,0 +1,8 @@
+ <% @objective.each do |t| %>
+    <%= render partial: "shared/objective", :collection => @objective %>
+    <div class = "uk-container-small uk-align-center">
+        <a <%= link_to "Edit", edit_objective_path(t) %></a>|
+        <a  <%= link_to "Remove", objective_path(t), method: :delete, data: { confirm: "Are you sure?" } %></a>|
+        <a <%= link_to "Next", new_skill_path(t) %></a>
+    </div>
+<% end %>

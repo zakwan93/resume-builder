@@ -1,0 +1,7 @@
+ <% @summary.each do |t| %>
+    <%= render partial: "shared/summary", :collection => @summary %>
+    <div class = "uk-container-small uk-align-center">
+        <a <%= link_to "Edit", edit_summary_path(t) %></a>|
+        <a  <%= link_to "Remove", summary_path(t), method: :delete, data: { confirm: "Are you sure?" } %></a>
+    </div>
+<% end %>

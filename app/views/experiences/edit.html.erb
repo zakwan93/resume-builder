@@ -1,0 +1,52 @@
+
+<div class= "uk-container uk-background-muted uk-padding uk-panel" style="padding: 50px;margin-top: 150px;">
+    <h2> Add your Experiance here </h2><br>
+        <%= form_for @experiences do |f| %>
+
+            <%= f.hidden_field :resume_id, :value => @user_resume %>
+             
+        
+            <label class="uk-form-label" for="form-stacked-text">
+                Job Title
+            </label>
+            <div class="uk-form-controls">
+                <%= f.text_field :job_title %>
+            </div>
+
+            <label class="uk-form-label" for="form-stacked-text">
+                Company Name
+            </label>
+            <div class="uk-form-controls">
+                <%= f.text_field :company %>
+            </div>
+
+            <label class="uk-form-label" for="form-stacked-text">
+                City Name
+            </label>
+            <div class="uk-form-controls">
+                <%= f.text_field :city %>
+            </div>
+
+            <label class="uk-form-label" for="form-stacked-text">
+                State Name
+            </label>
+            <div class="uk-form-controls">
+                <%= f.text_field :state %>
+            </div>
+
+            <label class="uk-form-label" for="form-stacked-text">
+                Duration
+            </label>
+            <div class="uk-form-controls">
+                <%= f.text_field :duration %>
+            </div>
+
+            <div class="waves-effect waves-light btn">
+              <%= submit_tag "Add" %>
+            </div>
+
+
+
+        <% end %>
+        
+</div>

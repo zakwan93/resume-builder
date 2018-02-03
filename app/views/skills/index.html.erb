@@ -1,0 +1,9 @@
+
+ <% @skills.each do |t| %>
+   <%= render partial: "shared/skills", :collection => @skills %>
+    <div class = "uk-container-small uk-align-center">
+    	<a <%= link_to "Add", new_skill_path(t) %></a>|
+        <a <%= link_to "Edit", edit_skill_path(t) %></a>|
+        <a  <%= link_to "Remove", skill_path(t), method: :delete, data: { confirm: "Are you sure?" } %></a>
+    </div>
+<% end %>

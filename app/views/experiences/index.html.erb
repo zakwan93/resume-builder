@@ -1,0 +1,31 @@
+<h1 class="uk-article-title" style="color: lightblue;><a class="uk-link-reset">All Experiences</a></h1>
+<div class="uk-container uk-background-muted uk-padding uk-panel" style="height: 230px;">
+    <% @experiences.each do |t| %>
+        <div class="uk-card uk-card-body">
+            
+          <h3 class="uk-card-title uk-align-center" style="text-align: center; font-size: 34px;" >
+              <%= t.job_title %>
+              <p class="uk-h4" style="color:red;"><%= t.company %></p>
+            
+              <div class="uk-child-width-1-3@m uk-child-width-1-2@s" uk-grid>
+                  <div>
+                      <span uk-icon="icon: info"></span>
+                      <span class="uk-text-left uk-h5"><%= t.city %></span>
+                  </div>
+                  <div>
+                      <span uk-icon="icon: phone"></span>
+                      <span class="uk-text-center uk-h5"><%= t.state %></span>
+                  </div>
+                  <div>
+                      <span uk-icon="icon: mail"></span>
+                      <span class="uk-text-right uk-h5"><%= t.duration %></span>
+                  </div>
+              </div>
+          </h3>
+        </div>
+<!-- 
+        <a <%= link_to "Edit", edit_introduction_path(t) %></a><br>
+        <a  <%= link_to "Remove", introductions_path(t), method: :delete, data: { confirm: "Are you sure?" } %></a> -->
+    <% end %>
+
+</div>
