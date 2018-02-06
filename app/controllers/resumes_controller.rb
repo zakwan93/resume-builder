@@ -44,4 +44,8 @@ class ResumesController < ApplicationController
   def set_skill
       @skills = Skill.find_by(resume: params[:id])
   end
+
+  def set_experiance
+      @experiances = Experiance.find_by(resume: params[:id])
+  end
 end

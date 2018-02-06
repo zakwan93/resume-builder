@@ -1,4 +1,13 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+
+<hr>
+<div class="uk-background-muted">
+    <div class="uk-grid">
+        <div class="uk-width-1-2">
+     <div class="uk-background-image@m uk-background-cover uk-background-muted uk-height-medium uk-width-large uk-flex uk-flex-center uk-flex-middle" style="background-image: url(/images/hero-bg-rg.jpg);width: 80vh;height: 80vh;">
+        </div>
+    </div>
+    <div style="padding: 10px; margin-top: 20px; margin-left: 20px;">        
+      <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -41,3 +50,13 @@
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
 <%= link_to "Back", :back %>
+
+      </div>
+</div>
+
+
+
+
+
+
+

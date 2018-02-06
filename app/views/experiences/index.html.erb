@@ -1,31 +1,29 @@
-<h1 class="uk-article-title" style="color: lightblue;><a class="uk-link-reset">All Experiences</a></h1>
-<div class="uk-container uk-background-muted uk-padding uk-panel" style="height: 230px;">
-    <% @experiences.each do |t| %>
-        <div class="uk-card uk-card-body">
-            
-          <h3 class="uk-card-title uk-align-center" style="text-align: center; font-size: 34px;" >
-              <%= t.job_title %>
-              <p class="uk-h4" style="color:red;"><%= t.company %></p>
-            
-              <div class="uk-child-width-1-3@m uk-child-width-1-2@s" uk-grid>
+  
+
+
+    <div class="uk-container" style="margin-bottom: 10px;">
+    <h3 class="uk-article-title" style="font-size: 24px; margin-bottom: 10px;"><b>WORK HISTORY </b></h3>
+    
+         <% @user_resume_experiences.each do |t| %>
+              <div class="uk-child-width-1-2@m uk-child-width-1-2@s" uk-grid style="margin-top: 1px;">
                   <div>
-                      <span uk-icon="icon: info"></span>
-                      <span class="uk-text-left uk-h5"><%= t.city %></span>
+                      <span class="uk-text-left"><%= t.job_title %>,<%= t.company %></span>
                   </div>
                   <div>
-                      <span uk-icon="icon: phone"></span>
-                      <span class="uk-text-center uk-h5"><%= t.state %></span>
-                  </div>
-                  <div>
-                      <span uk-icon="icon: mail"></span>
-                      <span class="uk-text-right uk-h5"><%= t.duration %></span>
+                      <span class="uk-text-right" style="margin-left: 315px;"><%= t.startdate %>,<%= t.enddate %></span>
                   </div>
               </div>
-          </h3>
-        </div>
-<!-- 
-        <a <%= link_to "Edit", edit_introduction_path(t) %></a><br>
-        <a  <%= link_to "Remove", introductions_path(t), method: :delete, data: { confirm: "Are you sure?" } %></a> -->
-    <% end %>
 
+              <p class="uk-text-small" style="margin-top: 5px;color: black;"><%= t.description %></p>
+        
+         <a <%= link_to "Edit", edit_experience_path(t) %></a> 
+
+      | 
+             <a <%= link_to "Remove", experience_path(t), method: :delete, data: { confirm: "Are you sure?" } %></a> |
+        <% end %>     
+        <br><br>
 </div>
+      
+       
+        
+         

@@ -1,11 +1,11 @@
 class ObjectivesController < ApplicationController
 	
 	def index
-		@objective = Objective.find(current_user.id).resume.objective
+		@objective = User.find(current_user.id).resume.objective
 	end
 
 	def show
-		@objective = Objective.find(current_user.id).resume.objective
+		@objective = User.find(current_user.id).resume.objective
 	end
 
 	def new
@@ -15,23 +15,28 @@ class ObjectivesController < ApplicationController
 
 	def create
 		@objective = Objective.create(resume_id: params[:objective][:resume_id],description: params[:objective][:description])
-		redirect_to users_path
+		if @objective.save
+			redirect_to users_path
+			flash[:notice] = "Job Created"
+		else
+			render 'objective/new'
+		end
 	end
 	
 	def edit
-		@objective = Objective.find(params[:id])
+		@objective = User.find(current_user.id).resume.objective
 	end
 
 	def update
-		@objective = Objective.find(params[:id])
-		@objective.update(resume_id: params[:objective][:resume_id],description: params[:objective][:description])
+		@objective = User.find(current_user.id).resume.objective
+		@objective.update_attributes(objective_params)
 		redirect_to users_path
 	end
 
 	def destroy
-		@objective = Objective.find(current_user.id).resume.objective
-		@objective.delete
-		redirect_to resume_path
+		@objective = Objective.find(params[:id])
+		@objective.destroy
+		redirect_to users_path
 	end
 
 	private
@@ -43,4 +48,9 @@ class ObjectivesController < ApplicationController
   	def set_objective
     	@objective = Objective.find_by(resume: params[:id])
   	end
+
+  	def objective_params 
+  		params.require(:objective).permit(:description)
+  	end
+
 end

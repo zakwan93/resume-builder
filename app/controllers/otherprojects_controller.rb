@@ -1,2 +1,3 @@
 class OtherprojectsController < ApplicationController
+	
 end

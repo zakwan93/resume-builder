@@ -1,9 +1,12 @@
-<% @introductions.each do |t| %>
+<h1 class="uk-article-title" style="color: lightblue;"><a class="uk-link-reset"> Introductions</a></h1>
+<div class="uk-container uk-background-muted uk-padding uk-panel" style="height: 230px;">
+    
         <div class="uk-card uk-card-body">
+            
           <h3 class="uk-card-title uk-align-center" style="text-align: center; font-size: 34px;" >
+            <% @introductions.each do |t| %>
 
-               <%= f.hidden_field :resume_id, :value => @user_resume %>
-
+              
               <%= t.name %>
               <p class="uk-h4" style="color:red;"><%= t.title %></p>
             
@@ -23,7 +26,4 @@
               </div>
           </h3>
         </div>
-<!-- 
-        <a <%= link_to "Edit", edit_introduction_path(t) %></a><br>
-        <a  <%= link_to "Remove", introductions_path(t), method: :delete, data: { confirm: "Are you sure?" } %></a> -->
-    <% end %> 
+     <% end %>

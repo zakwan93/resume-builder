@@ -1,0 +1,38 @@
+
+<div class= "uk-container uk-background-muted uk-padding uk-panel" style="padding: 50px;margin-top: 150px;">
+    <h2> Edit your Education here </h2><br>
+        <%= form_for @user_resume_education do |f| %>
+
+            <%= f.hidden_field :resume_id, :value => @user_resume %>
+
+            <label class="uk-form-label" for="form-stacked-text">
+                College Name
+            </label>
+            <div class="uk-form-controls">
+                <%= f.text_field :name %>
+            </div>
+
+            <label class="uk-form-label" for="form-stacked-text">
+                Degree Name
+            </label>
+            <div class="uk-form-controls">
+                <%= f.text_field :degree %>
+            </div>
+
+            <label class="uk-form-label" for="form-stacked-text">
+                Graduation Year
+            </label>
+            <div class="uk-form-controls">
+                <%= f.text_field :year_graduated %>
+            </div>
+
+
+            <div class="waves-effect waves-light btn">
+              <%= submit_tag "Add" %>
+            </div>
+
+
+
+        <% end %>
+        
+</div>

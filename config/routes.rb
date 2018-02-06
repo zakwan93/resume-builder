@@ -12,5 +12,9 @@ Rails.application.routes.draw do
   resources :summary
   resources :skills
   resources :experiences
+  resources :projects
+  resources :otherprojects
+  resources :educations
+  resources :reskills 
   resources :users
 end

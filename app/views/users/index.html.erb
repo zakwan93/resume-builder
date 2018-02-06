@@ -1,7 +1,4 @@
-<div class="uk-container uk-background-muted uk-padding uk-panel">
-	<h1 class="uk-text-center">Homepage</h1>
-</div>
-	
+
 	<hr class="uk-divider-icon">
 
 	<div class="uk-container">
@@ -10,14 +7,17 @@
 		        <div class="uk-card uk-card-default uk-card-body">
 		            <h3 class="uk-card-title">Introduction</h3>
 		            <p>
-				         <% if @user_resume_introduction == nil %>
+				         <% if @user_resume_introductions == nil %>
 						 	<h3> 
 						 		<a <%= link_to 'Incomplete', new_introduction_path %> </a>
 						 	</h3>
 						 	<% else %>
-
-						 	 <a <%= link_to "Edit", edit_introduction_path(:id => @current_user.id) %></a> |
-						 	 <a  <%= link_to "Remove", introductions_path(:id => @current_user.id), method: :delete, data: { confirm: "Are you sure?" } %></a>
+						 	<span uk-icon="file-edit">
+						 	 	<a <%= link_to "Edit", edit_introduction_path(:id => @current_user.id) %></a> 
+						 	</span> 
+						 	<span uk-icon="trash">
+						 		<a  <%= link_to "Remove", introduction_path(:id => @current_user.id), method: :delete, data: { confirm: "Are you sure?" } %></a>
+						 	</span>
 						 <% end %>
 		            </p>
 		        </div>
@@ -27,21 +27,23 @@
 		        <div class="uk-card uk-card-default uk-card-body">
 		            <h3 class="uk-card-title">Objective</h3>
 		            <p>
-				<% if @user_resume_objective == nil %>
-			 			<h3> 
-			 				<a <%= link_to 'Incomplete', new_objective_path %> </a>
-			 			</h3>
-			 		<% else %>
-
-			 	 	<a <%= link_to "Edit", edit_objective_path(:id => @current_user.id) %></a> |
-			 	 	<a  <%= link_to "Remove", objective_path(:id => @current_user.id), method: :delete, data: { confirm: "Are you sure?" } %></a>
-			 	<% end %>
+				         <% if @user_resume_objective == nil %>
+						 	<h3> 
+						 		<a <%= link_to 'Incomplete', new_objective_path %> </a>
+						 	</h3>
+						 	<% else %>
+						 	<span uk-icon="file-edit">
+						 	 	<a <%= link_to "Edit", edit_objective_path(:id => @current_user.id) %></a> 
+						 	</span> 
+						 	<span uk-icon="trash">
+						 		<a  <%= link_to "Remove", objective_path(:id => @current_user.id), method: :delete, data: { confirm: "Are you sure?" } %></a>
+						 	</span>
+						 <% end %>
 		            </p>
 		        </div>
 		    </div>
 
-
-		    <div>
+		   <!--  <div>
 		        <div class="uk-card uk-card-default uk-card-body">
 		            <h3 class="uk-card-title">Skills</h3>
 		      		<p>
@@ -49,14 +51,35 @@
 					 		<h3> 
 					 			<a <%= link_to 'Incomplete', new_skill_path %> </a>
 					 		</h3>
-					 	<% elsif @user_resume_skills == @skills %>
-					 		 <a <%= link_to 'add more', new_skill_path %> </a>
-							 <a <%= link_to "Edit", edit_skill_path(:id => @current_user.id) %></a> |
-					 	 	 <a  <%= link_to "Remove", skill_path(:id => @current_user.id), method: :delete, data: { confirm: "Are you sure?" } %></a>
-					 	<% else %>
+					 	<% else @user_resume_skills == @skills %>
+					 		 <a <%= link_to 'add more', skills_path(:id => @current_user.id) %> </a>|
+					 		 <span uk-icon="file-edit">
+							 	<a <%= link_to "Edit", edit_skill_path(:id => @current_user.id) %></a> 
+					 	 	 </span>
+					 	 	 <span uk-icon="trash">
+								<a  <%= link_to "Remove", skill_path(:id => @current_user.id), method: :delete, data: { confirm: "Are you sure?" } %></a>
+					 		 </span>
+					 	<% end %>
+				    </p>
+		        </div>
+		    </div> -->
 
-					 		<a <%= link_to "Edit", edit_skill_path(:id => @current_user.id) %></a> |
-					 	 	 <a  <%= link_to "Remove", skill_path(:id => @current_user.id), method: :delete, data: { confirm: "Are you sure?" } %></a>
+		     <div>
+		        <div class="uk-card uk-card-default uk-card-body">
+		            <h3 class="uk-card-title">Skills</h3>
+		      		<p>
+						<% if @user_resume_reskills.length == 0 %>
+					 		<h3> 
+					 			<a <%= link_to 'Incomplete', new_reskill_path %> </a>
+					 		</h3>
+					 	<% else %>
+					 		 <a <%= link_to 'Add more', new_reskill_path %> </a> |
+							 <span uk-icon="file-edit">
+							 	<a <%= link_to "Edit", reskills_path(:id => @current_user.id) %></a> 
+					 	 	 </span>
+					 	 	 <span uk-icon="trash">
+					 	 	 	<a  <%= link_to "Remove", reskill_path(:id => @current_user.id), method: :delete, data: { confirm: "Are you sure?" } %></a>
+					 		 </span>
 					 	<% end %>
 				    </p>
 		        </div>
@@ -66,20 +89,84 @@
 		        <div class="uk-card uk-card-default uk-card-body">
 		            <h3 class="uk-card-title">Experiences</h3>
 		      		<p>
-						<% if @user_resume_experiences == nil %>
+						<% if @user_resume_experiences.length == 0 %>
 					 		<h3> 
 					 			<a <%= link_to 'Incomplete', new_experience_path %> </a>
 					 		</h3>
 					 	<% else %>
 					 		 <a <%= link_to 'Add more', new_experience_path %> </a> |
-							 <a <%= link_to "Edit", edit_experience_path(:id => @current_user.id) %></a> |
-					 	 	 <a  <%= link_to "Remove", experience_path(:id => @current_user.id), method: :delete, data: { confirm: "Are you sure?" } %></a>
+							 <span uk-icon="file-edit">
+							 	<a <%= link_to "Edit", experiences_path(:id => @current_user.id) %></a> 
+					 	 	 </span>
+					 	 	 <span uk-icon="trash">
+					 	 	 	<a  <%= link_to "Remove", experiences_path(:id => @current_user.id), method: :delete, data: { confirm: "Are you sure?" } %></a>
+					 		 </span>
 					 	<% end %>
 				    </p>
 		        </div>
 		    </div>
+
+		   <!--  <div>
+		        <div class="uk-card uk-card-default uk-card-body">
+		            <h3 class="uk-card-title">Projects</h3>
+		      		<p>
+						<% if @user_resume_projects == nil %>
+					 		<h3> 
+					 			<a <%= link_to 'Incomplete', new_project_path %> </a>
+					 		</h3>
+					 	<% else %>
+					 		 <a <%= link_to 'Add more', new_project_path %> </a> |
+					 		 <span uk-icon="file-edit">
+							 	<a <%= link_to "Edit", edit_project_path(:id => @current_user.id) %></a> 
+					 	 	 </span>
+					 	 	 <span uk-icon="trash">
+					 	 	 	<a  <%= link_to "Remove", project_path(:id => @current_user.id), method: :delete, data: { confirm: "Are you sure?" } %></a>
+					 		 </span>
+					 	<% end %>
+				    </p>
+		        </div>
+		    </div> -->
 			
+			<div>
+		        <div class="uk-card uk-card-default uk-card-body">
+		            <h3 class="uk-card-title">Education</h3>
+		      		<p>
+						<% if @user_resume_education.length == 0 %>
+					 		<h3> 
+					 			<a <%= link_to 'Incomplete', new_education_path %> </a>
+					 		</h3>
+					 	<% else %>
+					 		 <a <%= link_to 'Add more', new_education_path %> </a> |
+							 <span uk-icon="file-edit">
+							 	<a <%= link_to "Edit", educations_path(:id => @current_user.id) %></a> 
+					 	 	 </span>
+					 	 	 <span uk-icon="trash">
+					 	 	 	<a <%= link_to "Remove", education_path(:id => @current_user.id), method: :delete, data: { confirm: "Are you sure?" } %></a>
+					 		 </span>
+					 	<% end %>
+				    </p>
+		        </div>
+		    </div>
 		</div>
-	</div>
+	</div><br>
+	<a class="uk-button uk-button-primary" <%= link_to 'View Your Full Resume', user_path(:id => @current_user.id) %> </a>
+
+<br>
+<hr class="uk-divider-icon">
+<div class="uk-container uk-background-muted uk-padding uk-panel">
+	<div class="uk-text-center" uk-grid>
+    
+    <div class="uk-width-expand ">
+        <div class="uk-card  uk-card-body uk-background-muted">
+        	I found an article about how to write a professional resume on Resume Genius. Then I discovered the application. It's useful and simple to use, and It's a free resume builder, Go for it.
+        </div>
+    </div>
+    <div class="uk-width-auto">
+    	<span uk-icon="quote-right"></span>
+        <div class="uk-card  uk-card-body uk-background-muted">David Patlut</div>
+    </div>
+
+</div>
+
 
 

@@ -1,0 +1,21 @@
+<div class= "uk-container uk-background-muted uk-padding uk-panel" style="padding: 50px;margin-top: 150px;">
+    <h2> Edit your skills here </h2><br>
+        <%= form_for @reskills do |f| %>
+
+             <%= f.hidden_field :resume_id, :value => @user_resume %>
+
+           <label class="uk-form-label" for="form-stacked-text">
+               Skill Name
+            </label>
+
+            <br>
+            <select 
+                      <%= f.collection_select :skill_id, Skill.all, :id, :company, prompt: true, :required => true %> 
+            </select>
+             
+             <br>
+           
+
+            <a <%= link_to "Update Skill", edit_skill_path(f) %></a>
+        <% end %>
+</div>

@@ -1,11 +1,11 @@
 class SkillsController < ApplicationController
 
 	def index
-		@skills = Skill.find(current_user.id).resume.skills
+		@user_resume_skills = User.find(current_user.id).resume.skills
 	end
 
 	def show
-		@skills = Skill.find(current_user.id).resume.skills
+		@skills= Skill.find(params[:id])
 	end
 
 	def new
@@ -14,18 +14,24 @@ class SkillsController < ApplicationController
 	end
 
 	def create
-		@skills = Skill.create(resume_id: params[:skill][:resume_id],name: params[:skill][:name])
+		@skills = Skill.create(name: params[:skill][:name])
 		redirect_to users_path
 	end
 	
 	def edit
-		@skills= Skill.find(params[:id])
+		@skills = Skill.find(current_user.id).resume.skills
 	end
 
 	def update
 		@skills = Skill.find(params[:id])
-		@skills.update(resume_id: params[:skill][:resume_id],name: params[:skill][:name])
+		@skills.update(name: params[:skill][:name])
 		redirect_to users_path
+	end
+
+	def destroy
+		@skills = Skill.find_by(current_user.id).resume.skills
+		@skills.delete
+		redirect_to resume_path
 	end
 
 	private

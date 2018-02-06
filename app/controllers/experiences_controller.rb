@@ -1,13 +1,11 @@
 class ExperiencesController < ApplicationController
 
 	def index
-
-		@experiences = Experience.find(current_user.id).resume.experiences
-
+		@user_resume_experiences = User.find(current_user.id).resume.experiences
 	end
 
 	def show
-		@experiences = Experience.find(current_user.id).resume.experience
+		@user_resume_experiences = User.find(current_user.id).resume.experiences
 	end
 
 
@@ -18,8 +16,8 @@ class ExperiencesController < ApplicationController
 	end
 
 	def create
-		@experiences = Experience.create(resume_id: params[:experience][:resume_id],job_title: params[:experience][:job_title],company: params[:experience][:company],city: params[:experience][:city],state: params[:experience][:state],duration: params[:experience][:duration])
-		redirect_to users_path
+		@experiences = Experience.create(resume_id: params[:experience][:resume_id],job_title: params[:experience][:job_title],company: params[:experience][:company],startdate: params[:experience][:startdate],enddate: params[:experience][:enddate],description: params[:experience][:description])
+		
 		if @experiences.save
 			redirect_to users_path
 			flash[:notice] = "Job Created"
@@ -29,20 +27,19 @@ class ExperiencesController < ApplicationController
     end
 
 	def edit
-		# @experiences = current_user.resume.experiences.find(params[:id])
-		@experiences = Experience.find(params[:id])
+		@user_resume_experience = Experience.find(params[:id])
 	end
 
 	def update
-		@experiences = Experience.find(params[:id])
-		Experience.create(resume_id: params[:experience][:resume_id],job_title: params[:experience][:job_title],company: params[:experience][:company],city: params[:experience][:city],state: params[:experience][:state],duration: params[:experience][:duration])
+		@user_resume_experience = Experience.find(params[:id])
+		@user_resume_experience.update_attributes(experience_params)
 		redirect_to users_path
 	end
 
 	def destroy
-		@experiences = Experience.find(current_user.id).resume.introduction
-		@experiences.delete
-		redirect_to resume_path
+		@user_resume_experience = Experience.find(params[:id])
+		@user_resume_experience.delete
+		redirect_to users_path
 	end
 
 	private
@@ -54,5 +51,10 @@ class ExperiencesController < ApplicationController
   	def set_experience
     	@experiences = Experience.find_by(resume: params[:id])
   	end
+
+  	def experience_params 
+  		params.require(:experience).permit(:job_title,:company,:startdate,:enddate,:description)
+  	end
+
 
 end

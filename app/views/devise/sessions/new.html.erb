@@ -1,4 +1,13 @@
-<h2>Log in</h2>
+
+<hr>
+<div class="uk-background-muted">
+    <div class="uk-grid">
+        <div class="uk-width-1-2">
+     <div class="uk-background-image@m uk-background-cover uk-background-muted uk-height-medium uk-width-large uk-flex uk-flex-center uk-flex-middle" style="background-image: url(/images/hero-bg-rg.jpg);width: 100vh;height: 80vh;">
+        </div>
+    </div>
+    <div style="padding: 170px;">        
+      <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -24,3 +33,10 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+      
+      </div>
+</div>
+
+
+

@@ -1,0 +1,12 @@
+
+ 
+   <%= render partial: "shared/skills", :collection => @user_resume_skills %>
+   <% @user_resume_skills.each do |t| %>
+    <div class = "uk-container-small uk-align-center">
+    	<a <%= link_to "Add", new_skill_path(t) %></a>|
+        <a <%= link_to "Edit", edit_skill_path(t) %></a>|
+        <a  <%= link_to "Remove", skill_path(t), method: :delete, data: { confirm: "Are you sure?" } %></a>
+    </div>
+<% end %>
+
+

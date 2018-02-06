@@ -1,0 +1,17 @@
+
+<div class="uk-container" style="margin-bottom: 10px;">
+    <h3 class="uk-article-title" style="font-size: 24px; margin-bottom: 10px;"><b>WORK HISTORY </b></h3>
+    
+         <% @user_resume_experiences.each do |t| %>
+              <div class="uk-child-width-1-2@m uk-child-width-1-2@s" uk-grid style="margin-top: 1px;">
+                  <div>
+                      <span class="uk-text-left"><%= t.job_title %>,<%= t.company %></span>
+                  </div>
+                  <div>
+                      <span class="uk-text-right" style="margin-left: 315px;"><%= t.startdate %>,<%= t.enddate %></span>
+                  </div>
+              </div>
+
+              <p class="uk-text-small" style="margin-top: 5px;color: black;"><%= t.description %></p>
+        <% end %>
+</div>

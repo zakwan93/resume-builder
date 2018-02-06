@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20180201040739) do
   create_table "educations", force: :cascade do |t|
     t.string "name"
     t.string "degree"
-    t.integer "year_graduated"
+    t.string "year_graduated"
     t.integer "resume_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -27,9 +27,9 @@ ActiveRecord::Schema.define(version: 20180201040739) do
   create_table "experiences", force: :cascade do |t|
     t.string "job_title"
     t.string "company"
-    t.string "city"
-    t.string "state"
-    t.date "duration"
+    t.date "startdate"
+    t.date "enddate"
+    t.text "description"
     t.integer "resume_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -84,7 +84,6 @@ ActiveRecord::Schema.define(version: 20180201040739) do
 
   create_table "skills", force: :cascade do |t|
     t.string "name"
-    t.integer "resume_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

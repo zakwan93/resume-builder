@@ -1,7 +1,7 @@
 
 <div class= "uk-container uk-background-muted uk-padding uk-panel" style="padding: 50px;margin-top: 150px;">
-    <h2> Add your intro here </h2><br>
-        <%= form_for @introductions.each do |f| %>
+    <h2> Edit your intro here </h2><br>
+        <%= form_for @introductions do |f| %>
 
              <%= f.hidden_field :resume_id, :value => @user_resume %>
              

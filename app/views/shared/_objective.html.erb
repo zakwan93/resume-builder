@@ -1,13 +1,6 @@
-<div class="uk-container">
-
-<article class="uk-article">
-    <% @objective.each do |t| %>
-    <h1 class="uk-article-title" style="color: lightblue;><a class="uk-link-reset">Professional Summary</a></h1>
-
-    <p class="uk-article-meta" style="color: black;"><%= t.description %></p>
-<!-- 
-        <a <%= link_to "Edit", edit_introduction_path(t) %></a><br>
-        <a  <%= link_to "Remove", introductions_path(t), method: :delete, data: { confirm: "Are you sure?" } %></a> -->
-    <% end %>
+<div class="uk-container" style="margin-bottom: 10px;">
+	<article class="uk-article">
+    	<h1 class="uk-article-title" style="font-size: 24px;margin-bottom:0px;"><b>PROFESSIONAL SUMMARY</b></h1>
+			<p class="uk-article-meta" style="color: black;"><%= obj.description %></p>
 </article>  
 </div>

@@ -1,41 +1,26 @@
-<div class="uk-container">
+    
+<div class="uk-overflow-auto" style="margin-bottom: 10px;">
 
-<article class="uk-article">
-    <% @skills.each do |t| %>
-    <h1 class="uk-article-title" style="color: lightblue;><a class="uk-link-reset">Skills</a></h1>
+    
+    <h1 class="uk-article-title" style="font-size: 24px;margin-bottom: 5px;"> <b>SKILLS</b> </h1>
+    
+    <table class="uk-table" style="margin-top: 0px;line-height: 0px;;">
+    <tbody >
+        <tr>
+            <% @user_resume_skills.each do |t| %>
+            <td><%= t.name %>
+        <a <%= link_to "Edit", edit_skill_path(t) %></a>|
+        <a  <%= link_to "Remove", skill_path(t), method: :delete, data: { confirm: "Are you sure?" } %></a>
+    </div>
+            </td>
 
 
-    <ul class="uk-grid uk-grid-width-1-5">
-    	<li><%= t.skill1 %></li>
-    	<li><%= t.skill2 %></li>
-    	<li><%= t.skill3 %></li>
-    	<li><%= t.skill4 %></li>
-	</ul>
+            <% end %>
 
-	<ul class="uk-grid uk-grid-width-1-5">
-    	<li><%= t.skill5 %></li>
-    	<li><%= t.skill6 %></li>
-    	<li><%= t.skill7 %></li>
-    	<li><%= t.skill8 %></li>
-	</ul>
-
-	<ul class="uk-grid uk-grid-width-1-5">
-    	<li><%= t.skill9 %></li>
-    	<li><%= t.skill10 %></li>
-    	<li><%= t.skill11 %></li>
-    	<li><%= t.skill12 %></li>
-	</ul>
-
-	<ul class="uk-grid uk-grid-width-1-5">
-    	<li><%= t.skill13 %></li>
-    	<li><%= t.skill14 %></li>
-    	<li><%= t.skill15%></li>
-    	<li><%= t.skill16 %></li>
-	</ul>
-
-<!-- 
-        <a <%= link_to "Edit", edit_introduction_path(t) %></a><br>
-        <a  <%= link_to "Remove", introductions_path(t), method: :delete, data: { confirm: "Are you sure?" } %></a> -->
-    <% end %>
-</article>  
+        </tr>
+    </tbody>
+    
+</table>
 </div>
+
+

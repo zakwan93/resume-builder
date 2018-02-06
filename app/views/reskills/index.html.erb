@@ -1,0 +1,11 @@
+	
+
+    
+<%= render partial: "shared/reskills", locals: {skill: @user_resume_reskills} %>
+		<% @user_resume_reskills.each do |t| %>
+			| 
+             <a <%= link_to "Remove", reskill_path(t), method: :delete, data: { confirm: "Are you sure?" } %></a> |
+        <% end %>     
+        <br><br>
+        
+         <a <%= link_to "Add More", new_reskill_path %></a> 

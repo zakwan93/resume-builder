@@ -1,7 +1,7 @@
 
 <div class= "uk-container uk-background-muted uk-padding uk-panel" style="padding: 50px;margin-top: 150px;">
-    <h2> Add your Experiance here </h2><br>
-        <%= form_for @experiences do |f| %>
+    <h2> Edit your Experiance here </h2><br>
+        <%= form_for @user_resume_experience do |f| %>
 
             <%= f.hidden_field :resume_id, :value => @user_resume %>
              
@@ -20,25 +20,25 @@
                 <%= f.text_field :company %>
             </div>
 
+            Duration<br>
             <label class="uk-form-label" for="form-stacked-text">
-                City Name
+                Start Date
             </label>
             <div class="uk-form-controls">
-                <%= f.text_field :city %>
+                <%= f.date_field :startdate %>
+            </div>
+            <label class="uk-form-label" for="form-stacked-text">
+               End Date
+            </label>
+            <div class="uk-form-controls">
+                <%= f.date_field :enddate %>
             </div>
 
             <label class="uk-form-label" for="form-stacked-text">
-                State Name
+                Discription
             </label>
             <div class="uk-form-controls">
-                <%= f.text_field :state %>
-            </div>
-
-            <label class="uk-form-label" for="form-stacked-text">
-                Duration
-            </label>
-            <div class="uk-form-controls">
-                <%= f.text_field :duration %>
+                <%= f.text_field :description %>
             </div>
 
             <div class="waves-effect waves-light btn">

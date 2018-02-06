@@ -1,0 +1,18 @@
+<div class="uk-overflow-auto" style="margin-bottom: 10px;">
+    <h1 class="uk-article-title" style="font-size: 24px;margin-bottom: 5px;"> <b>SKILLS</b> </h1>
+    <table class="uk-table" style="margin-top: 0px;line-height: 0px;;">
+        <tbody >
+            <tr>
+             <% skill.each do |t| %>
+             <% Skill.where("id = '#{t.skill_id}'").each do |x| %>
+             <td><%= x.name %></td>
+             <% end %>
+             <% end %>
+         </tr>
+     </tbody>
+ </table>
+</div>
+
+
+
+

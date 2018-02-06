@@ -1,0 +1,18 @@
+    
+<div class="uk-overflow-auto">
+
+    <table class="uk-table">
+    <h1 class="uk-article-title" style="font-size: 24px;margin-bottom: 10px;"><b> Projects </b> </h1>
+    
+    <tbody >
+        <tr>
+            <% @user_resume_projects.each do |t| %>
+            <td><%= @experience.find(t.experience_id).company %></td>
+            <td><%= t.name %></td>
+            <td><%= t.description %></td>
+            <% end %>
+        </tr>
+    </tbody>
+    
+</table>
+</div>
