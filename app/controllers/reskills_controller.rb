@@ -22,14 +22,14 @@ class ReskillsController < ApplicationController
 	end
 
 	def update
-		@reskills = Reskill.find(current_user.id).resume.reskills
+		@user_resume_reskills = Reskill.find(current_user.id).resume.reskills
 		@reskills.update_attributes(reskills_params)
 		redirect_to users_path
 	end
 
 	def destroy
-		@user_resume_reskills = Reskill.find_by(current_user.id).resume.reskills
-		@reskills.delete
+		@user_resume_reskills = Reskill.find(params[:id])
+		@user_resume_reskills.delete
 		redirect_to resume_path
 	end
 

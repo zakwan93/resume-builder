@@ -1,0 +1,42 @@
+<div class= "uk-container uk-background-muted uk-padding uk-panel" style="padding: 50px;margin-top: 150px;">
+    <h2> Add your Project here </h2><br>
+        <%= form_for @user_resume_otherproject do |f| %>
+
+             <%= f.hidden_field :resume_id, :value => @user_resume %>
+
+            <label class="uk-form-label" for="form-stacked-text">
+               Project Name
+            </label>
+
+            <br>
+            <div class="uk-form-controls">
+                <%= f.text_field :name %>
+            </div>
+
+            <label class="uk-form-label" for="form-stacked-text">
+              Description (NOTE :- 2,3,4 line is optional)
+            </label>
+
+            <br>
+            <div class="uk-form-controls">
+                <%= f.text_field :desc1 %>
+            </div>
+            <div class="uk-form-controls">
+                <%= f.text_field :desc2 %>
+            </div>
+            <div class="uk-form-controls">
+                <%= f.text_field :desc3 %>
+            </div>
+            <div class="uk-form-controls">
+                <%= f.text_field :desc4 %>
+            </div>
+
+             
+             <br>
+           
+            <div class="waves-effect waves-light btn">
+              <%= submit_tag "update" %>
+            </div>
+        <% end %>
+</div>
+

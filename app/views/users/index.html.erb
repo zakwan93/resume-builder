@@ -106,26 +106,26 @@
 		        </div>
 		    </div>
 
-		   <!--  <div>
+		    <div>
 		        <div class="uk-card uk-card-default uk-card-body">
 		            <h3 class="uk-card-title">Projects</h3>
 		      		<p>
-						<% if @user_resume_projects == nil %>
+						<% if @user_resume_otherprojects.length == 0 %>
 					 		<h3> 
-					 			<a <%= link_to 'Incomplete', new_project_path %> </a>
+					 			<a <%= link_to 'Incomplete', new_otherproject_path %> </a>
 					 		</h3>
 					 	<% else %>
-					 		 <a <%= link_to 'Add more', new_project_path %> </a> |
+					 		 <a <%= link_to 'Add more', new_otherproject_path %> </a> |
 					 		 <span uk-icon="file-edit">
-							 	<a <%= link_to "Edit", edit_project_path(:id => @current_user.id) %></a> 
+							 	<a <%= link_to "Edit", otherprojects_path(:id => @current_user.id) %></a> 
 					 	 	 </span>
 					 	 	 <span uk-icon="trash">
-					 	 	 	<a  <%= link_to "Remove", project_path(:id => @current_user.id), method: :delete, data: { confirm: "Are you sure?" } %></a>
+					 	 	 	<a  <%= link_to "Remove", otherproject_path(:id => @current_user.id), method: :delete, data: { confirm: "Are you sure?" } %></a>
 					 		 </span>
 					 	<% end %>
 				    </p>
 		        </div>
-		    </div> -->
+		    </div>
 			
 			<div>
 		        <div class="uk-card uk-card-default uk-card-body">
@@ -152,6 +152,7 @@
 	<a class="uk-button uk-button-primary" <%= link_to 'View Your Full Resume', user_path(:id => @current_user.id) %> </a>
 
 <br>
+<strong>Note :- </strong> Click me after filled up the Introduction and Objective section. 
 <hr class="uk-divider-icon">
 <div class="uk-container uk-background-muted uk-padding uk-panel">
 	<div class="uk-text-center" uk-grid>
