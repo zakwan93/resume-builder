@@ -1,14 +1,26 @@
 class UsersController < ApplicationController
 
   def index
-    @user_resume_introductions = User.find(current_user.id).resume.introduction
-    @user_resume_objective = User.find(current_user.id).resume.objective
-    # # @user_resume_skills = User.find(current_user.id).resume.skills
-    @user_resume_experiences = User.find(current_user.id).resume.experiences
-    # @user_resume_projects = User.find(current_user.id).resume.projects
-    @user_resume_education = User.find(current_user.id).resume.educations
-    @user_resume_reskills = User.find(current_user.id).resume.reskills
+    @user_resume_introductions = current_user.resume.introduction
+    @user_resume_objective = current_user.resume.objective
+    @user_resume_experiences = current_user.resume.experiences
+    @user_resume_otherprojects = current_user.resume.otherprojects
+    @user_resume_education = current_user.resume.educations
+    @user_resume_reskills = current_user.resume.reskills
 
+     respond_to do |format|
+      format.html
+      format.pdf do 
+        # render pdf: 'resume',
+        #      template: 'users/show.html.erb',
+        #      locals: {:intro => @user_resume_introductions}
+        pdf = render_to_string pdf: 'resume',
+                              template: 'users/show.html.erb',
+                              locals: {:intro => @user_resume_introductions},
+                              encoding: 'utf-8'
+        send_data(pdf, filename: 'test.pdf', type: 'application/pdf', desposition: 'attachment')
+      end
+    end
   end
   
 	def new
@@ -17,27 +29,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    # @user_resume_introduction = User.find(current_user.id).resume.introduction
-    @user_resume_introductions = User.find(current_user.id).resume.introduction
-    @user_resume_objective = User.find(current_user.id).resume.objective
-    @user_resume_reskills = User.find(current_user.id).resume.reskills
-    @user_resume_experiences = User.find(current_user.id).resume.experiences
-    @user_resume_education = User.find(current_user.id).resume.educations
-    # @x = Skill.find(@user_resume_reskills)
-    # puts "hello"
-    # puts @x
-    # puts "hello"
-
-    # @objective = Objective.all
-    # # @skills = Skill.find(current_user.id).resume.skills
-    # # @skills = @user_resume_skills
-    # @skills = Skill.all
-    # @experiences = Experience.all
-    # # @experiences = Experience.all
-    # @projects = Project.all
-    # @education = Education.all
-    # @reskill = Reskill.all
-
+    @user_resume_introductions = current_user.resume.introduction
+    @user_resume_objective = current_user.resume.objective
+    @user_resume_reskills = current_user.resume.reskills
+    @user_resume_experiences = current_user.resume.experiences
+    @user_resume_otherprojects = current_user.resume.otherprojects
+    @user_resume_education = current_user.resume.educations
+    
   end
 
   def edit

@@ -1,0 +1,14 @@
+<div class="uk-container" style="margin-bottom: 10px;">
+	<article class="uk-article">
+    	<h1 class="uk-article-title" style="font-size: 24px;margin-bottom:10px;"><b>PROJECTS</b></h1>
+		<% @user_resume_otherprojects.each do |t| %>
+			<strong><%= t.name %></strong>
+			<ul class="uk-list uk-list-bullet" style="margin-top: 0px;">
+			    <li><%= t.desc1 %></li>
+			    <li><%= t.desc2 %></li>
+			    <li><%= t.desc3 %></li>
+			    <li><%= t.desc4 %></li>
+			</ul>
+		<% end %>
+</article>  
+</div>

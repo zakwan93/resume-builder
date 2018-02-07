@@ -34,7 +34,7 @@ class ObjectivesController < ApplicationController
 	end
 
 	def destroy
-		@objective = Objective.find(params[:id])
+		@objective = User.find(current_user.id).resume.objective
 		@objective.destroy
 		redirect_to users_path
 	end

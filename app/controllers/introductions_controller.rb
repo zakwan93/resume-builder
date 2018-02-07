@@ -36,7 +36,7 @@ class IntroductionsController < ApplicationController
 	end
 
 	def destroy
-		@introductions = Introduction.find(params[:id])
+		@introductions = User.find(current_user.id).resume.introduction
 		@introductions.destroy
 		redirect_to users_path
 	end
