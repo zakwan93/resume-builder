@@ -5,18 +5,17 @@
 
             <%= f.hidden_field :resume_id, :value => @user_resume %>
              
-        
-            <label class="uk-form-label" for="form-stacked-text">
-                Objective
-            </label>
-            <div class="uk-form-controls ">
-               <input class = "uk-input" =  <%= f.text_field :description %> 
-                
+             Objective
+            <div class="uk-margin">
+                <textarea class="uk-textarea" rows="5" placeholder="Describe your job"
+                    <%= f.text_field :description, :required => true %>
+                </textarea>
             </div>
-
-            <div class="waves-effect waves-light btn">
-              <%= submit_tag "Add" %>
-            </div>
+            <br>
+            <button class="uk-button uk-button-default"
+                 <%= submit_tag "Add" %> ADD
+             </button>
+    
         <% end %>
         
 </div>

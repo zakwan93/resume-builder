@@ -5,34 +5,30 @@
 
             <%= f.hidden_field :resume_id, :value => @user_resume %>
 
-            <label class="uk-form-label" for="form-stacked-text">
-                College Name
-            </label>
+            College Name
             <div class="uk-form-controls">
-                <%= f.text_field :name %>
+                <input class="uk-input" type="text" placeholder="Name of the college"
+                <%= f.text_field :name, :required => true %>
             </div>
-
-            <label class="uk-form-label" for="form-stacked-text">
-                Degree Name
-            </label>
+            
+            Degree Name
             <div class="uk-form-controls">
-                <%= f.text_field :degree %>
+                <input class="uk-input" type="text" placeholder="ex. Bachelor of Technology (B.Tech.)"
+                <%= f.text_field :degree, :required => true %>
             </div>
 
-            <label class="uk-form-label" for="form-stacked-text">
-                Graduation Year
-            </label>
+            Graduation Year (ex. Feb,2018)
             <div class="uk-form-controls">
-                <%= f.text_field :year_graduated %>
+                <input class="uk-input" type="text" placeholder="ex. Feb,2018"
+                <%= f.text_field :year_graduated, :required => true %>
             </div>
 
-
-            <div class="waves-effect waves-light btn">
-              <%= submit_tag "Add" %>
-            </div>
-
-
-
+             
+             <br>
+            <button class="uk-button uk-button-default"
+                 <%= submit_tag "Add" %> UPDATE
+             </button>
+    
         <% end %>
         
 </div>

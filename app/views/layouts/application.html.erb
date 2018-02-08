@@ -19,10 +19,11 @@
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
   	
- <nav class="uk-navbar-container" uk-navbar>
+ <nav class="uk-navbar" uk-navbar>
 
-    <div class="uk-navbar-left">
-      <img src="/images/logo.svg" >
+    <div class="uk-navbar-left" style="margin-top: 20px;">
+      <h2><strong style="color: #f0506e;">R</strong>ESUME <strong style="color: #f0506e;">G</strong>ENIUS!</span></h2>
+      <!-- <img src="/images/logo.svg" > -->
     </div>
 
     <div class="uk-navbar-right">
@@ -30,7 +31,7 @@
       
           <% if user_signed_in? %>
             <div class="uk-navbar-left">
-            <li>Logged in as <strong><%= current_user.email %></strong>.</li>
+            <li>Logged in as <strong style="color: #1e87f0;"><%= current_user.email %></strong>.</li>
           </div>
             <li><%= link_to 'Home', users_path, :class => 'navbar-link' %> </li>
             <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> </li>

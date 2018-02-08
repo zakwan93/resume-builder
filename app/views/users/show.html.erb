@@ -12,11 +12,3 @@
 <%= render partial: "shared/education", locals: {edu: @user_resume_education} %>
 
 <br><br><br>
-
-
-
-
-
-<p>
-  <%= link_to "Printable Receipt (PDF)", users_path(:id => @current_user.id, format: 'pdf') %>
-</p>

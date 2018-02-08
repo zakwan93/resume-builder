@@ -4,14 +4,14 @@
     
          <% @user_resume_experiences.each do |t| %>
               <div class="uk-child-width-1-2@m uk-child-width-1-2@s" uk-grid style="margin-top: 1px;">
-                  <div>
-                     <strong> <span class="uk-text-left"><%= t.job_title %>,<%= t.company %></span></strong>
+                  <div class="uk-text-left">
+                     <strong> <span><%= t.job_title %>,<%= t.company %></span></strong>
                   </div>
-                  <div>
-                      <span class="uk-text-right" style="margin-left: 370px;"><%= t.startdate %>,<%= t.enddate %></span>
+                  <div class="uk-text-right" >
+                      <span style="margin-left: 370px;"><%= t.startdate %>-<%= t.enddate %></span>
                   </div>
               </div>
 
               <p class="uk-text-small" style="margin-top: 5px;color: black;"><%= t.description %></p>
         <% end %>
-</div>
+</div> 

@@ -1,11 +1,11 @@
 
 	<hr class="uk-divider-icon">
 
-	<div class="uk-container">
+	<div class="uk-container uk-animation-slide-left">
 		<div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
-			<div>
-		        <div class="uk-card uk-card-default uk-card-body">
-		            <h3 class="uk-card-title">Introduction</h3>
+			<div class="uk-animation-toggle">
+		        <div class="uk-card uk-card-default uk-card-body uk-animation-slide-left">
+		            <h3 class="uk-card-title"><strong style="color: #f0506e;">I</strong>ntroduction</h3>
 		            <p>
 				         <% if @user_resume_introductions == nil %>
 						 	<h3> 
@@ -23,9 +23,9 @@
 		        </div>
 		    </div>
 
-		    <div>
-		        <div class="uk-card uk-card-default uk-card-body">
-		            <h3 class="uk-card-title">Objective</h3>
+		    <div class="uk-animation-toggle">
+		        <div class="uk-card uk-card-default uk-card-body uk-animation-scale-up">
+		            <h3 class="uk-card-title"><strong style="color: #f0506e;">O</strong>bjective</h3>
 		            <p>
 				         <% if @user_resume_objective == nil %>
 						 	<h3> 
@@ -43,30 +43,10 @@
 		        </div>
 		    </div>
 
-		   <!--  <div>
-		        <div class="uk-card uk-card-default uk-card-body">
-		            <h3 class="uk-card-title">Skills</h3>
-		      		<p>
-						<% if @user_resume_skills == nil %>
-					 		<h3> 
-					 			<a <%= link_to 'Incomplete', new_skill_path %> </a>
-					 		</h3>
-					 	<% else @user_resume_skills == @skills %>
-					 		 <a <%= link_to 'add more', skills_path(:id => @current_user.id) %> </a>|
-					 		 <span uk-icon="file-edit">
-							 	<a <%= link_to "Edit", edit_skill_path(:id => @current_user.id) %></a> 
-					 	 	 </span>
-					 	 	 <span uk-icon="trash">
-								<a  <%= link_to "Remove", skill_path(:id => @current_user.id), method: :delete, data: { confirm: "Are you sure?" } %></a>
-					 		 </span>
-					 	<% end %>
-				    </p>
-		        </div>
-		    </div> -->
 
-		     <div>
-		        <div class="uk-card uk-card-default uk-card-body">
-		            <h3 class="uk-card-title">Skills</h3>
+		     <div class="uk-animation-toggle">
+		        <div class="uk-card uk-card-default uk-card-body uk-animation-slide-right">
+		            <h3 class="uk-card-title"><strong style="color: #f0506e;">S</strong>kills</h3>
 		      		<p>
 						<% if @user_resume_reskills.length == 0 %>
 					 		<h3> 
@@ -77,17 +57,14 @@
 							 <span uk-icon="file-edit">
 							 	<a <%= link_to "Edit", reskills_path(:id => @current_user.id) %></a> 
 					 	 	 </span>
-					 	 	 <span uk-icon="trash">
-					 	 	 	<a  <%= link_to "Remove", reskill_path(:id => @current_user.id), method: :delete, data: { confirm: "Are you sure?" } %></a>
-					 		 </span>
 					 	<% end %>
 				    </p>
 		        </div>
 		    </div>
 
-		    <div>
-		        <div class="uk-card uk-card-default uk-card-body">
-		            <h3 class="uk-card-title">Experiences</h3>
+		   <div class="uk-animation-toggle">
+		        <div class="uk-card uk-card-default uk-card-body uk-animation-slide-left">
+		            <h3 class="uk-card-title"><strong style="color: #f0506e;">E</strong>xperiences</h3>
 		      		<p>
 						<% if @user_resume_experiences.length == 0 %>
 					 		<h3> 
@@ -98,17 +75,14 @@
 							 <span uk-icon="file-edit">
 							 	<a <%= link_to "Edit", experiences_path(:id => @current_user.id) %></a> 
 					 	 	 </span>
-					 	 	 <span uk-icon="trash">
-					 	 	 	<a  <%= link_to "Remove", experiences_path(:id => @current_user.id), method: :delete, data: { confirm: "Are you sure?" } %></a>
-					 		 </span>
 					 	<% end %>
 				    </p>
 		        </div>
 		    </div>
 
-		    <div>
-		        <div class="uk-card uk-card-default uk-card-body">
-		            <h3 class="uk-card-title">Projects</h3>
+		   <div class="uk-animation-toggle">
+		        <div class="uk-card uk-card-default uk-card-body uk-animation-scale-up">
+		            <h3 class="uk-card-title"><strong style="color: #f0506e;">P</strong>rojects</h3>
 		      		<p>
 						<% if @user_resume_otherprojects.length == 0 %>
 					 		<h3> 
@@ -119,17 +93,14 @@
 					 		 <span uk-icon="file-edit">
 							 	<a <%= link_to "Edit", otherprojects_path(:id => @current_user.id) %></a> 
 					 	 	 </span>
-					 	 	 <span uk-icon="trash">
-					 	 	 	<a  <%= link_to "Remove", otherproject_path(:id => @current_user.id), method: :delete, data: { confirm: "Are you sure?" } %></a>
-					 		 </span>
 					 	<% end %>
 				    </p>
 		        </div>
 		    </div>
 			
-			<div>
-		        <div class="uk-card uk-card-default uk-card-body">
-		            <h3 class="uk-card-title">Education</h3>
+			<div class="uk-animation-toggle">
+		        <div class="uk-card uk-card-default uk-card-body uk-animation-slide-right">
+		            <h3 class="uk-card-title"><strong style="color: #f0506e;">E</strong>ducation</h3>
 		      		<p>
 						<% if @user_resume_education.length == 0 %>
 					 		<h3> 
@@ -140,34 +111,61 @@
 							 <span uk-icon="file-edit">
 							 	<a <%= link_to "Edit", educations_path(:id => @current_user.id) %></a> 
 					 	 	 </span>
-					 	 	 <span uk-icon="trash">
-					 	 	 	<a <%= link_to "Remove", education_path(:id => @current_user.id), method: :delete, data: { confirm: "Are you sure?" } %></a>
-					 		 </span>
 					 	<% end %>
 				    </p>
 		        </div>
 		    </div>
 		</div>
 	</div><br>
-	<a class="uk-button uk-button-primary" <%= link_to 'View Your Full Resume', user_path(:id => @current_user.id) %> </a>
+
+	<% if @user_resume_introductions && @user_resume_objective != nil %>
+		<div class="uk-animation-toggle">
+			<a class="uk-button uk-button-primary uk-animation-shake" <%= link_to 'View Your Full Resume', user_path(:id => @current_user.id) %> </a>
+		</div>
+		<p>
+ 			<%= link_to "Click to download copy of your resume(PDF) ", users_path(:id => @current_user.id, format: 'pdf') %>
+		</p>
+	<% end %>
+	<% if @user_resume_introductions && @user_resume_objective && @user_resume_reskills && @user_resume_experiences && @user_resume_otherprojects && @user_resume_education != nil %>
+	
+	<% end %>
 
 <br>
-<strong>Note :- </strong> Click me after filled up the Introduction and Objective section. 
 <hr class="uk-divider-icon">
 <div class="uk-container uk-background-muted uk-padding uk-panel">
 	<div class="uk-text-center" uk-grid>
     
-    <div class="uk-width-expand ">
-        <div class="uk-card  uk-card-body uk-background-muted">
-        	I found an article about how to write a professional resume on Resume Genius. Then I discovered the application. It's useful and simple to use, and It's a free resume builder, Go for it.
-        </div>
-    </div>
-    <div class="uk-width-auto">
-    	<span uk-icon="quote-right"></span>
-        <div class="uk-card  uk-card-body uk-background-muted">David Patlut</div>
-    </div>
-
+	    <div class="uk-width-expand ">
+	        <div class="uk-card  uk-card-body uk-background-muted">
+	        	I found an article about how to write a professional resume on Resume Genius. Then I discovered the application. It's useful and simple to use, and It's a free resume builder, Go for it.
+	        </div>
+	    </div>
+	    <div class="uk-width-auto">
+	    	<span uk-icon="quote-right"></span>
+	        <div class="uk-card  uk-card-body uk-background-muted"><strong style="color: #f0506e;">D</strong>avid <strong style="color: #f0506e;" >P</strong>atlut!</div>
+	    </div>
+	</div>
 </div>
+<br><br><br>
 
+<nav class="uk-navbar" uk-navbar>
 
+    <div class="uk-navbar-left ">
+        <ul class="uk-navbar-nav uk-text-capitalize">
+             <li>
+                 <div>
+                      Designed & Developed by
+                      <div class="uk-navbar-subtitle uk-text-center"><strong style="color: #f0506e;" >Z</strong>akwan <strong style="color: #f0506e;">B</strong>haiyat</div>
+                 </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="uk-navbar-right">
+        <ul class="uk-navbar-nav uk-text-capitalize">           
+            <li>&copy; 2018 ResumeGenius.com </a></li>
+        </ul>
+    </div>
+</nav>
+<br>
 
