@@ -1,40 +1,52 @@
+
 <hr>
-<div class="uk-background-muted">
-    <div class="uk-grid">
-        <div class="uk-width-expand">
-     <div class="uk-background-image@m uk-background-cover uk-background-muted uk-height-medium uk-width-large uk-flex uk-flex-center uk-flex-middle" style="background-image: url(/images/hero-bg-rg.jpg);width: 100vh;height: 80vh;">
-        </div>
-    </div>
-  
-    <div style="padding: 170px;">        
-      <h2>Sign up</h2>
+<div class="uk-container uk-flex uk-padding uk-background-muted">
+         <div class="uk-container-primary uk-padding ">
+               <h2 class="uk-heading-line" ><span>WELCOME TO A <strong style="color: #f0506e;">R</strong>ESUME <strong style="color: #f0506e;">G</strong>ENIUS!</span></h3>
+               <el style = "color: #f0506e;">FOLLOW 3 EASY STEPS</el>  
+              <h4 class="uk-heading-line uk-text-left"><span>1. CREATE AN <strong style="color: #f0506e;">A</strong>CCOUNT</span></h4>
 
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= devise_error_messages! %>
-        <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-        </div>
+              <h4 class="uk-heading-line uk-text-center"><span>2. FILL OUT YOUR <strong style="color: #f0506e;">I</strong>NFORMATION</span></h4>
 
-        <div class="field">
-          <%= f.label :password %>
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "off" %>
+              <h4 class="uk-heading-line uk-text-right"><span>3. DOWNLOAD YOUR <strong style="color: #f0506e;">R</strong>ESUME</h4>
+              WHAT'S NEXT<strong style = "color: #f0506e;">?</strong> <BR>
+              <el>PRINT IT OUT AND GET IT READY TO <strong style = "color: #f0506e;">SEND!</strong></el>
         </div>
-
-        <div class="field">
-          <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "off" %>
-        </div>
-
-
-        <div class="actions">
-          <%= f.submit "Sign up" %>
-        </div>
-      <% end %>
-<%= render "devise/shared/links" %>
       
-      </div>
+        <div class="uk-container-primary uk-padding uk-align-center">        
+          <h2>Sign up</h2>
+
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+            <div class="field">
+              <%= f.label :email %><br />
+              <div class="uk-form-controls">
+                    <input class="uk-input" type="text"
+                      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>  
+              </div>
+
+            <div class="field">
+              <%= f.label :password %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <div class="uk-form-controls">
+                    <input class="uk-input" type="password"
+              <%= f.password_field :password, autocomplete: "off" %>
+            </div>
+
+            <div class="field">
+              <%= f.label :password_confirmation %><br />
+               <div class="uk-form-controls">
+                    <input class="uk-input" type="password"
+              <%= f.password_field :password_confirmation, autocomplete: "off" %>
+            </div>
+            <br>
+            <button class="uk-button uk-button-default"
+                 <%= f.submit "Sign up" %> Sign Up
+             </button>
+
+          <% end %><br>
+          <%= render "devise/shared/links" %>
+        </div>
 </div>

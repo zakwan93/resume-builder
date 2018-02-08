@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 20180201040739) do
   create_table "experiences", force: :cascade do |t|
     t.string "job_title"
     t.string "company"
-    t.date "startdate"
-    t.date "enddate"
+    t.string "startdate"
+    t.string "enddate"
     t.text "description"
     t.integer "resume_id"
     t.datetime "created_at", null: false

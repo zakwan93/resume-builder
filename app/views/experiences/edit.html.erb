@@ -6,46 +6,35 @@
             <%= f.hidden_field :resume_id, :value => @user_resume %>
              
         
-            <label class="uk-form-label" for="form-stacked-text">
-                Job Title
-            </label>
             <div class="uk-form-controls">
-                <%= f.text_field :job_title %>
+                <input class="uk-input" type="text" placeholder="Job Title"
+                <%= f.text_field :job_title, :required => true %> 
             </div>
-
-            <label class="uk-form-label" for="form-stacked-text">
-                Company Name
-            </label>
+            <br>
             <div class="uk-form-controls">
-                <%= f.text_field :company %>
+                <input class="uk-input" type="text" placeholder="Company Name"
+                <%= f.text_field :company, :required => true %>
             </div>
-
+            <br>
             Duration<br>
-            <label class="uk-form-label" for="form-stacked-text">
-                Start Date
-            </label>
             <div class="uk-form-controls">
-                <%= f.date_field :startdate %>
+                <input class="uk-input" type="text" placeholder="Start Date (ex. June-2016)"
+                <%= f.text_field :startdate, :required => true %>
             </div>
-            <label class="uk-form-label" for="form-stacked-text">
-               End Date
-            </label>
             <div class="uk-form-controls">
-                <%= f.date_field :enddate %>
+                <input class="uk-input" type="text" placeholder="End Date (ex. Dec-2016) or Present"
+                <%= f.text_field :enddate, :required => true %>
             </div>
-
-            <label class="uk-form-label" for="form-stacked-text">
-                Discription
-            </label>
+            <br>
+            Describe about your job
             <div class="uk-form-controls">
-                <%= f.text_field :description %>
+                <input class="uk-input" type="text" placeholder="End Date (ex. Dec-2016) or Present"
+                <%= f.text_field :description, :required => true %>
             </div>
-
-            <div class="waves-effect waves-light btn">
-              <%= submit_tag "Add" %>
-            </div>
-
-
+            <br>
+             <button class="uk-button uk-button-default"
+                 <%= submit_tag "Add" %> UPDATE
+             </button>
 
         <% end %>
         

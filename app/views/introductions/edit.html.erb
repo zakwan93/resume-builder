@@ -5,44 +5,34 @@
 
              <%= f.hidden_field :resume_id, :value => @user_resume %>
              
-            <label class="uk-form-label" for="form-stacked-text">
-                Name
-            </label>
+           <div class="uk-form-controls">
+                <input class="uk-input" type="text" placeholder="Your Name"
+                <%= f.text_field :name, :required => true %> 
+            </div>
+            <br>
             <div class="uk-form-controls">
-                <%= f.text_field :name %>
+                <input class="uk-input" type="text" placeholder="Title ex. Web Developer"
+                <%= f.text_field :title, :required => true %> 
             </div>
-
-            <label class="uk-form-label" for="form-stacked-text">
-                Title
-            </label>
+            <br>
             <div class="uk-form-controls">
-                <%= f.text_field :title %>
+                <input class="uk-input" type="text" placeholder="Address ex. New York,NY"
+                <%= f.text_field :address, :required => true %> 
             </div>
-
-            <label class="uk-form-label" for="form-stacked-text">
-                address
-            </label>
+            <br>
             <div class="uk-form-controls">
-                <%= f.text_field :address %>
+                <input class="uk-input" type="text" placeholder="Phone Number"
+                 <%= f.text_field :phone, :required => true %>
             </div>
-
-            <label class="uk-form-label" for="form-stacked-text">
-                Phone
-            </label>
+            <br>
             <div class="uk-form-controls">
-                <%= f.text_field :phone %>
+                <input class="uk-input" type="text" placeholder="Email ID"
+                  <%= f.text_field :email, :required => true %>
             </div>
-
-            <label class="uk-form-label" for="form-stacked-text">
-                Email
-            </label>
-            <div class="uk-form-controls">
-                <%= f.text_field :email %>
-            </div>
-
-            <div class="waves-effect waves-light btn">
-              <%= submit_tag "Add" %>
-            </div>
+            <br>
+             <button class="uk-button uk-button-default"
+                 <%= submit_tag "Add" %> UPDATE
+             </button>
 
         <% end %>
 </div>
