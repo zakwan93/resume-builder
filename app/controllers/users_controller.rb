@@ -37,19 +37,16 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user_resume_introductions = current_user.resume.introduction
-    @user_resume_objective = current_user.resume.objective
-    @user_resume_reskills = current_user.resume.reskills
-    @user_resume_experiences = current_user.resume.experiences
-    @user_resume_otherprojects = current_user.resume.otherprojects
-    @user_resume_education = current_user.resume.educations
-
+   
   end
 
   def create
 	    @resume = Resume.new
   end
 
+  def review
+
+  end
 
   	private
   		def set_user

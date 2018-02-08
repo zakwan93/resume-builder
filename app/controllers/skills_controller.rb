@@ -19,7 +19,7 @@ class SkillsController < ApplicationController
 	end
 	
 	def edit
-		@skills = Skill.find(current_user.id).resume.skills
+		
 	end
 
 	def update
