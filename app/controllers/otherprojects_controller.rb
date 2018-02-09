@@ -37,7 +37,7 @@ class OtherprojectsController < ApplicationController
 	def destroy
 		@user_resume_otherproject = Otherproject.find(params[:id])
 		@user_resume_otherproject.delete
-		redirect_to resume_path
+		redirect_to users_path
 	end
 
 	private

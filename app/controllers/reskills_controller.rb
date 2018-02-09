@@ -31,7 +31,7 @@ class ReskillsController < ApplicationController
 	def destroy
 		@user_resume_reskills = Reskill.find(params[:id])
 		@user_resume_reskills.delete
-		redirect_to resume_path
+		redirect_to users_path
 	end
 
 	private
