@@ -9,15 +9,20 @@
             </label>
 
             <br>
-            <select 
+            <select class="uk-select uk-form-width-medium" 
                       <%= f.collection_select :skill_id, Skill.all, :id, :name, prompt: true, :required => true %> 
             </select>
              
-             <br>
-           
-            <div class="waves-effect waves-light btn">
-              <%= submit_tag "Add" %>
-            </div>
+             <br><br>
+            <button class="uk-button"
+                 <%= submit_tag "Add" %> ADD
+            </button>
+
+           <a class="uk-button uk-button-primary" <%= link_to 'Back', users_path(:id => @current_user.id) %> </a>
+
         <% end %>
 </div>
 
+<br><br>
+
+<%= render partial: "shared/reskills", locals: {skill: @user_resume_reskills} %>

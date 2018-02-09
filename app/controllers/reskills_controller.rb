@@ -10,11 +10,12 @@ class ReskillsController < ApplicationController
 	def new
 		@user_resume = User.find(current_user.id).resume.id
 		@reskills = Reskill.new(params[:resume_id])
+		@user_resume_reskills = current_user.resume.reskills
 	end
 
 	def create
 		@reskills = Reskill.create(resume_id:params[:reskill][:resume_id],skill_id:params[:reskill][:skill_id])
-		redirect_to users_path
+		redirect_to new_reskill_path
 	end
 	
 	def edit

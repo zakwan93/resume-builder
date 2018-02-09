@@ -4,13 +4,14 @@
 	<div class="uk-container uk-animation-slide-left">
 		<div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
 			<div class="uk-animation-toggle">
-		        <div class="uk-card uk-card-default uk-card-body uk-animation-slide-left">
+		        <div class="uk-card uk-card-default uk-card-body uk-animation-fade">
 		            <h3 class="uk-card-title"><strong style="color: #f0506e;">B</strong>ASIC 	<strong style="color: #f0506e;">I</strong>NFO</h3>
 		            <p>
 				         <% if @user_resume_introductions == nil %>
 						 	<h3> 
 						 		<a <%= link_to 'Incomplete', new_introduction_path %> </a>
 						 	</h3>
+
 						 	<% else %>
 						 	<span uk-icon="file-edit">
 						 	 	<a <%= link_to "Edit", edit_introduction_path(:id => @current_user.id) %></a> 
@@ -18,13 +19,14 @@
 						 	<span uk-icon="trash">
 						 		<a  <%= link_to "Remove", introduction_path(:id => @current_user.id), method: :delete, data: { confirm: "Are you sure?" } %></a>
 						 	</span>
+						 	<span  uk-icon="icon: check; ratio: 3.5" style="color: MediumSeaGreen;"></span>
 						 <% end %>
 		            </p>
 		        </div>
 		    </div>
 
 		    <div class="uk-animation-toggle">
-		        <div class="uk-card uk-card-default uk-card-body uk-animation-scale-up">
+		        <div class="uk-card uk-card-default uk-card-body uk-animation-fade">
 		            <h3 class="uk-card-title"><strong style="color: #f0506e;">S</strong>UMMARY</h3>
 		            <p>
 				         <% if @user_resume_objective == nil %>
@@ -38,6 +40,7 @@
 						 	<span uk-icon="trash">
 						 		<a  <%= link_to "Remove", objective_path(:id => @current_user.id), method: :delete, data: { confirm: "Are you sure?" } %></a>
 						 	</span>
+						 	<span  uk-icon="icon: check; ratio: 3.5" style="color: MediumSeaGreen;"></span>
 						 <% end %>
 		            </p>
 		        </div>
@@ -45,7 +48,7 @@
 
 
 		     <div class="uk-animation-toggle">
-		        <div class="uk-card uk-card-default uk-card-body uk-animation-slide-right">
+		        <div class="uk-card uk-card-default uk-card-body uk-animation-fade">
 		            <h3 class="uk-card-title"><strong style="color: #f0506e;">S</strong>KILLS</h3>
 		      		<p>
 						<% if @user_resume_reskills.length == 0 %>
@@ -57,13 +60,14 @@
 							 <span uk-icon="file-edit">
 							 	<a <%= link_to "Edit", reskills_path(:id => @current_user.id) %></a> 
 					 	 	 </span>
+					 	 	 <span  uk-icon="icon: check; ratio: 3.5" style="color: MediumSeaGreen;"></span>
 					 	<% end %>
 				    </p>
 		        </div>
 		    </div>
 
 		   <div class="uk-animation-toggle">
-		        <div class="uk-card uk-card-default uk-card-body uk-animation-slide-left">
+		        <div class="uk-card uk-card-default uk-card-body uk-animation-fade">
 		            <h3 class="uk-card-title"><strong style="color: #f0506e;">E</strong>XPERIENCES</h3>
 		      		<p>
 						<% if @user_resume_experiences.length == 0 %>
@@ -75,13 +79,14 @@
 							 <span uk-icon="file-edit">
 							 	<a <%= link_to "Edit", experiences_path(:id => @current_user.id) %></a> 
 					 	 	 </span>
+					 	 	 <span  uk-icon="icon: check; ratio: 3.5" style="color: MediumSeaGreen;"></span>
 					 	<% end %>
 				    </p>
 		        </div>
 		    </div>
 
 		   <div class="uk-animation-toggle">
-		        <div class="uk-card uk-card-default uk-card-body uk-animation-scale-up">
+		        <div class="uk-card uk-card-default uk-card-body uk-animation-fade">
 		            <h3 class="uk-card-title"><strong style="color: #f0506e;">P</strong>ROJECTS</h3>
 		      		<p>
 						<% if @user_resume_otherprojects.length == 0 %>
@@ -93,13 +98,14 @@
 					 		 <span uk-icon="file-edit">
 							 	<a <%= link_to "Edit", otherprojects_path(:id => @current_user.id) %></a> 
 					 	 	 </span>
+					 	 	 <span  uk-icon="icon: check; ratio: 3.5" style="color: MediumSeaGreen;"></span>
 					 	<% end %>
 				    </p>
 		        </div>
 		    </div>
 			
 			<div class="uk-animation-toggle">
-		        <div class="uk-card uk-card-default uk-card-body uk-animation-slide-right">
+		        <div class="uk-card uk-card-default uk-card-body uk-animation-fade">
 		            <h3 class="uk-card-title"><strong style="color: #f0506e;">E</strong>DUCATIONS</h3>
 		      		<p>
 						<% if @user_resume_education.length == 0 %>
@@ -111,6 +117,7 @@
 							 <span uk-icon="file-edit">
 							 	<a <%= link_to "Edit", educations_path(:id => @current_user.id) %></a> 
 					 	 	 </span>
+					 	 	 <span  uk-icon="icon: check; ratio: 3.5" style="color: MediumSeaGreen;"></span>
 					 	<% end %>
 				    </p>
 		        </div>
@@ -120,11 +127,11 @@
 
 	<% if @user_resume_introductions && @user_resume_objective != nil %>
 		<div class="uk-animation-toggle">
-			<a class="uk-button uk-button-primary uk-animation-shake" <%= link_to 'View Your Full Resume', user_path(:id => @current_user.id) %> </a>
+			<a class="uk-button uk-button-primary uk-animation-fade" <%= link_to 'View Your Full Resume', user_path(:id => @current_user.id) %> </a>
+		</div><br>
+		<div class="uk-animation-toggle">
+ 			<a class="uk-button uk-button-primary uk-animation-fade" <%= link_to "Download Resume(PDF)", users_path(:id => @current_user.id, format: 'pdf') %></a>
 		</div>
-		<p>
- 			<%= link_to "Click to download copy of your resume(PDF) ", users_path(:id => @current_user.id, format: 'pdf') %>
-		</p>
 	<% end %>
 	<% if @user_resume_introductions && @user_resume_objective && @user_resume_reskills && @user_resume_experiences && @user_resume_otherprojects && @user_resume_education != nil %>
 	
@@ -134,7 +141,7 @@
 <hr class="uk-divider-icon">
 <div class="uk-container">
 	<h4 class="uk-text-center">
-		<strong style="color: #f0506e;">M</strong>ost <strong style="color: #f0506e;">R</strong>ecent <strong style="color: #f0506e;">R</strong>eview
+		<strong style="color: #f0506e;">R</strong>ecent <strong style="color: #f0506e;">R</strong>eview
 	</h4><br>
 </div>
 <div class="uk-container uk-background-muted uk-padding uk-panel">
