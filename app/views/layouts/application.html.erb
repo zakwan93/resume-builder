@@ -31,7 +31,7 @@
       
           <% if user_signed_in? %>
             <div class="uk-navbar-left">
-            <li>Logged in as <strong style="color: #1e87f0;"><%= current_user.email %></strong>.</li>
+            <li>Logged in as <strong style="color: #1e87f0;"><%= current_user.email %></strong></li>
           </div>
             <li><%= link_to 'Home', users_path, :class => 'navbar-link' %> </li>
             <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> </li>
