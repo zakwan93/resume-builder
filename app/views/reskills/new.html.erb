@@ -14,11 +14,11 @@
             </select>
              
              <br><br>
-            <button class="uk-button"
+            <button class="uk-button uk-button-primary"
                  <%= submit_tag "Add" %> ADD
             </button>
 
-           <a class="uk-button uk-button-primary" <%= link_to 'Back', users_path(:id => @current_user.id) %> </a>
+           <a class="uk-button" <%= link_to 'Back', users_path(:id => @current_user.id) %> </a>
 
         <% end %>
 </div>

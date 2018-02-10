@@ -3,13 +3,13 @@
 
 	<div class="uk-container uk-animation-slide-left">
 		<div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
-			<div class="uk-animation-toggle">
-		        <div class="uk-card uk-card-default uk-card-body uk-animation-fade">
+			<div>
+		        <div class="uk-card uk-card-default uk-card-body">
 		            <h3 class="uk-card-title"><strong style="color: #f0506e;">B</strong>ASIC 	<strong style="color: #f0506e;">I</strong>NFO</h3>
 		            <p>
 				         <% if @user_resume_introductions == nil %>
-						 	<h3> 
-						 		<a <%= link_to 'Incomplete', new_introduction_path %> </a>
+						 	<h3 class="uk-animation-toggle"> 
+						 		<a class="uk-button uk-button-primary uk-animation-shake" <%= link_to 'START', new_introduction_path %> </a>
 						 	</h3>
 
 						 	<% else %>
@@ -25,13 +25,13 @@
 		        </div>
 		    </div>
 
-		    <div class="uk-animation-toggle">
-		        <div class="uk-card uk-card-default uk-card-body uk-animation-fade">
+		    <div>
+		        <div class="uk-card uk-card-default uk-card-body">
 		            <h3 class="uk-card-title"><strong style="color: #f0506e;">S</strong>UMMARY</h3>
 		            <p>
 				         <% if @user_resume_objective == nil %>
-						 	<h3> 
-						 		<a <%= link_to 'Incomplete', new_objective_path %> </a>
+						 	<h3 class="uk-animation-toggle"> 
+						 		<a class="uk-button uk-button-primary uk-animation-shake" <%= link_to 'START', new_objective_path %> </a>
 						 	</h3>
 						 	<% else %>
 						 	<span uk-icon="file-edit">
@@ -47,13 +47,13 @@
 		    </div>
 
 
-		     <div class="uk-animation-toggle">
-		        <div class="uk-card uk-card-default uk-card-body uk-animation-fade">
+		     <div>
+		        <div class="uk-card uk-card-default uk-card-body">
 		            <h3 class="uk-card-title"><strong style="color: #f0506e;">S</strong>KILLS</h3>
 		      		<p>
 						<% if @user_resume_reskills.length == 0 %>
-					 		<h3> 
-					 			<a <%= link_to 'Incomplete', new_reskill_path %> </a>
+					 		<h3 class="uk-animation-toggle"> 
+						 		<a class="uk-button uk-button-primary uk-animation-shake" <%= link_to 'START', new_reskill_path %> </a>
 					 		</h3>
 					 	<% else %>
 					 		 <a <%= link_to 'Add more', new_reskill_path %> </a> |
@@ -66,13 +66,13 @@
 		        </div>
 		    </div>
 
-		   <div class="uk-animation-toggle">
-		        <div class="uk-card uk-card-default uk-card-body uk-animation-fade">
+		   <div>
+		        <div class="uk-card uk-card-default uk-card-body">
 		            <h3 class="uk-card-title"><strong style="color: #f0506e;">E</strong>XPERIENCES</h3>
 		      		<p>
 						<% if @user_resume_experiences.length == 0 %>
-					 		<h3> 
-					 			<a <%= link_to 'Incomplete', new_experience_path %> </a>
+					 		<h3 class="uk-animation-toggle"> 
+						 		<a class="uk-button uk-button-primary uk-animation-shake"<%= link_to 'START', new_experience_path %> </a>
 					 		</h3>
 					 	<% else %>
 					 		 <a <%= link_to 'Add more', new_experience_path %> </a> |
@@ -85,13 +85,13 @@
 		        </div>
 		    </div>
 
-		   <div class="uk-animation-toggle">
-		        <div class="uk-card uk-card-default uk-card-body uk-animation-fade">
+		   <div>
+		        <div class="uk-card uk-card-default uk-card-body">
 		            <h3 class="uk-card-title"><strong style="color: #f0506e;">P</strong>ROJECTS</h3>
 		      		<p>
 						<% if @user_resume_otherprojects.length == 0 %>
-					 		<h3> 
-					 			<a <%= link_to 'Incomplete', new_otherproject_path %> </a>
+					 		<h3 class="uk-animation-toggle"> 
+						 		<a class="uk-button uk-button-primary uk-animation-shake" <%= link_to 'START', new_otherproject_path %> </a>
 					 		</h3>
 					 	<% else %>
 					 		 <a <%= link_to 'Add more', new_otherproject_path %> </a> |
@@ -104,13 +104,13 @@
 		        </div>
 		    </div>
 			
-			<div class="uk-animation-toggle">
-		        <div class="uk-card uk-card-default uk-card-body uk-animation-fade">
+			<div>
+		        <div class="uk-card uk-card-default uk-card-body">
 		            <h3 class="uk-card-title"><strong style="color: #f0506e;">E</strong>DUCATIONS</h3>
 		      		<p>
 						<% if @user_resume_education.length == 0 %>
-					 		<h3> 
-					 			<a <%= link_to 'Incomplete', new_education_path %> </a>
+					 		<h3 class="uk-animation-toggle"> 
+						 		<a class="uk-button uk-button-primary uk-animation-shake" <%= link_to 'START', new_education_path %> </a>
 					 		</h3>
 					 	<% else %>
 					 		 <a <%= link_to 'Add more', new_education_path %> </a> |
