@@ -1,6 +1,9 @@
 <div class="uk-container" style="margin-bottom: 10px;">
 	<article class="uk-article">
-    	<h1 class="uk-article-title" style="font-size: 24px;margin-bottom:0px;"><b>PROFESSIONAL SUMMARY</b></h1>
-			<p class="uk-article-meta" style="color: black;"><%= obj.description %></p>
+
+	<% if @user_resume_introductions != nil %>
+    	<h1 class="uk-article-title" style="font-size: 16px;margin-bottom:0px;"><b>PROFESSIONAL SUMMARY</b></h1>
+			<p class="uk-article-meta" style="color: black; font-size: 12px; margin-top: 10px;"><%= obj.description %></p>
+	<% end %>
 </article>  
 </div>

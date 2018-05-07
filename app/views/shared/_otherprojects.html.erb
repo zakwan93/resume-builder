@@ -1,14 +1,21 @@
 <div class="uk-container" style="margin-bottom: 10px;">
-	<article class="uk-article">
-    	<h1 class="uk-article-title" style="font-size: 24px;margin-bottom:10px;"><b>PROJECTS</b></h1>
-		<% @user_resume_otherprojects.each do |t| %>
-			<strong><%= t.name %></strong>
-			<ul class="uk-list uk-list-bullet" style="margin-top: 0px;">
-			    <li><%= t.desc1 %></li>
-			    <li><%= t.desc2 %></li>
-			    <li><%= t.desc3 %></li>
-			    <li><%= t.desc4 %></li>
-			</ul>
-		<% end %>
-</article>  
+	<% if @user_resume_otherprojects.length != 0 %>
+		<article class="uk-article">
+	    	<h1 class="uk-article-title" style="font-size: 16px;margin-bottom:10px;"><b>PROJECTS</b></h1>
+			<% @user_resume_otherprojects.each do |t| %>
+				<strong style="font-size: 14px;"><%= t.name %></strong>
+				<ul class="uk-list uk-list-none" style="margin-top: 0px; font-size: 12px; color: black; list-style: none;">
+				    <li style="margin-top: 2px;"> - <%= t.desc1 %></li>
+				    <li style="margin-top: 2px;"> - <%= t.desc2 %></li>
+				    <% unless t.desc3.blank? %>
+				    	<li style="margin-top: 2px;"> - <%= t.desc3 %></li>
+				    <% end %>
+				    <% unless t.desc3.blank? %>
+				    	<li style="margin-top: 2px;"> - <%= t.desc4 %></li>
+				 	<% end %>
+				    
+				</ul>
+			<% end %>
+		</article>
+	<% end %>  
 </div>
