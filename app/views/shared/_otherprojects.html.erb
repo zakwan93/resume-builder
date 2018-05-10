@@ -3,8 +3,8 @@
 		<article class="uk-article">
 	    	<h1 class="uk-article-title" style="font-size: 16px;margin-bottom:10px;"><b>PROJECTS</b></h1>
 			<% @user_resume_otherprojects.each do |t| %>
-				<strong style="font-size: 14px;"><%= t.name %></strong>
-				<ul class="uk-list uk-list-none" style="margin-top: 0px; font-size: 12px; color: black; list-style: none;">
+				<strong style="font-size: 14px; margin-top: 0px;"><%= t.name %></strong>
+				<ul class="uk-list uk-list-none" style="margin-top: 0px; margin-bottom: 4px; font-size: 12px; color: black; list-style: none;">
 				    <li style="margin-top: 2px;"> - <%= t.desc1 %></li>
 				    <li style="margin-top: 2px;"> - <%= t.desc2 %></li>
 				    <% unless t.desc3.blank? %>
