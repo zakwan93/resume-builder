@@ -16,7 +16,7 @@ class IntroductionsController < ApplicationController
 	end
 
 	def create
-		@introductions = Introduction.create(resume_id: params[:introduction][:resume_id],name: params[:introduction][:name],title: params[:introduction][:title],address: params[:introduction][:address],phone: params[:introduction][:phone],email: params[:introduction][:email])
+		@introductions = Introduction.create(resume_id: params[:introduction][:resume_id],name: params[:introduction][:name],title: params[:introduction][:title],address: params[:introduction][:address],phone: params[:introduction][:phone],email: params[:introduction][:email],linkdin: params[:introduction][:linkdin],portfolio: params[:introduction][:portfolio],github: params[:introduction][:github])
 		if @introductions.save
 			redirect_to users_path
 			flash[:notice] = "Job Created"
@@ -52,7 +52,7 @@ class IntroductionsController < ApplicationController
   	end
 
   	def introduction_params 
-  		params.require(:introduction).permit(:name,:title,:address,:phone,:email)
+  		params.require(:introduction).permit(:name,:title,:address,:phone,:email,:linkdin,:portfolio,:github)
   	end
 
   

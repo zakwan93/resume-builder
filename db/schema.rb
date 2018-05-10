@@ -41,6 +41,9 @@ ActiveRecord::Schema.define(version: 20180201040739) do
     t.string "address"
     t.string "phone"
     t.string "email"
+    t.string "linkdin"
+    t.string "portfolio"
+    t.string "github"
     t.integer "resume_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

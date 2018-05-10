@@ -30,6 +30,23 @@
                   <%= f.text_field :email, :required => true %>
             </div>
             <br>
+            <span style="color: red;"> This is optional info! </span>
+            <br>
+             <div class="uk-form-controls">
+                <input class="uk-input" type="text" placeholder="linkdin profile"
+                  <%= f.text_field :linkdin %>
+            </div>
+            <br>
+             <div class="uk-form-controls">
+                <input class="uk-input" type="text" placeholder="Portfolio Link"
+                  <%= f.text_field :portfolio %>
+            </div>
+            <br>
+             <div class="uk-form-controls">
+                <input class="uk-input" type="text" placeholder="Github Link"
+                  <%= f.text_field :github %>
+            </div>
+            <br>
              <button class="uk-button uk-button-primary"
                  <%= submit_tag "Add" %> UPDATE
              </button>

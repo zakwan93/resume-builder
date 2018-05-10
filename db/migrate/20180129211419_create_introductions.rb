@@ -7,6 +7,9 @@ class CreateIntroductions < ActiveRecord::Migration[5.1]
       	t.string :address
       	t.string :phone
       	t.string :email
+        t.string :linkdin
+        t.string :portfolio
+        t.string :github
       	t.integer :resume_id
 
       t.timestamps
