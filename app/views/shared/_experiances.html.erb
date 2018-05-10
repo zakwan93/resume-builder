@@ -5,26 +5,21 @@
       <h3 class="uk-article-title" style="font-size: 16px; margin-bottom: 5px;"><b>WORK HISTORY </b></h3>
       
            <% @user_resume_experiences.each do |t| %>
-                <div>
                        
-                        <span class="uk-text-left;" style="font-size: 12px;">
-                          <%= t.job_title %>
-                        </span>
-                </div>
-                <div class="uk-child-width-1-2@m uk-child-width-1-2@s" uk-grid style="margin-top: 1px; ">
-                     <div class="uk-text-left">
-                        <span style="font-size: 12px; color: black;">
-                          <%= t.company %>
-                        </span>
-                      </div>
-                      <div class="uk-text-right">
-                        <span style="font-size: 12px; color: black;">
-                          <%= t.startdate %>-<%= t.enddate %>
-                        </span>
-                      </div>
+                <span class="uk-text-left;" style="font-size: 12px;">
+                    <%= t.job_title %>
+                </span>
+
+                <div class="uk-child-width-1-2@m uk-child-width-1-2@s" uk-grid style="line-height: 0;">
+                  <div style="line-height: 0.5;">
+                      <span class="uk-text-left" style="font-size: 12px; color: black;"><%= t.company %></span>
+                  </div>
+                  <div class="uk-text-right" style="line-height: 0.5;">
+                      <span style=" font-size: 12px; color:black;"><%= t.startdate %>-<%= t.enddate %></span>
+                  </div>
                 </div>
 
-                <p class="uk-text-small" style="margin-top: 5px;color: black; font-size: 12px;"><%= t.description %></p>
+                <p class="uk-text-small" style="margin-top: 5px; margin-bottom: 5px; color: black; font-size: 12px;"><%= t.description %></p>
           <% end %>
   </div> 
 <% end %>
