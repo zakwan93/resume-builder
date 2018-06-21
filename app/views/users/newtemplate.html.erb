@@ -1,0 +1,165 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<div class="row">
+		<div class="col-6">
+			<h1 style="font-size: 50px;" class="text-uppercase"> <%= @resume.introduction.name %> </h1>
+			<div>
+				<h5> <%= @resume.introduction.title %></h5> 
+			</div>
+			<div class="row" style="margin-left: 5px;">
+				<span> <%= @resume.introduction.address %></span> |    
+				<span style="margin-left: 5px; margin-right: 5px;"> <%= @resume.introduction.phone %></span> 
+			</div>
+			<span style="margin-left: 5px; margin-right: 5px;"> <%= @resume.introduction.email %> </span>
+		
+		</div>
+
+		<div class="col-6" >
+			<% unless @resume.introduction.linkdin.blank? %>
+				<div class="mb-3">
+					<!-- <img src="http://www.theredbrickroad.com/wp-content/uploads/2017/05/linkedin-logo-copy.png" alt="linkedin" width="30px" height="30px"> -->
+					<!-- <img src="/images/linkedin.svg" alt="linkedin" width="30px" height="30px"> -->
+					<a href = <%= @resume.introduction.linkdin %> target = "_blank"><%= @resume.introduction.linkdin %> </a>
+				</div>
+			<% end %>
+			<% unless @resume.introduction.github.blank? %>
+				<div class="mb-3">
+					<!-- <img src="https://vignette.wikia.nocookie.net/minestuck/images/5/54/GitHub_Logo.png" alt="github" width="30px" height="30px"> -->
+					<a href = <%= @resume.introduction.github %> target = "_blank"> <%= @resume.introduction.github %></a>
+				</div>
+			<% end %>
+			<% unless @resume.introduction.portfolio.blank? %>
+				<div>
+					<%= image_tag "package.png", size: "30x30" %>
+					<!-- <img src="/images/package.png" alt="github" width="30px" height="30px"> -->
+					<a href = <%= @resume.introduction.portfolio %> target = "_blank"> <%= @resume.introduction.portfolio %></a>
+				</div>
+			<% end %>
+		</div>	
+</div>
+
+<hr style="width: 100%;height: 8px;margin-left: auto;margin-right: auto;background-color:#000;border: 0 none;margin-top: 15px;margin-bottom:5px;"> 
+<br>
+
+<div class="row">
+	<div class="col-3">
+		<h6> PROFESSIONAL SUMMARY </h6>
+	</div>
+	<div class="col-9">
+		<span> <%= @resume.objective.description %> </span>
+	</div>
+</div>
+
+<br>
+
+<div class="row">
+	<div class="col-3">
+		<h6> SKILLS </h6>
+	</div>
+	<div class="col-9" style="min-height: 100px;">
+		<table class="uk-table" style="margin-top: 0px;line-height: 0px;;">
+            <tbody >
+                <% next_end = 3 %>
+                <% @resume.reskills.each_with_index do |t, i| %>
+                    <% if i % 4 == 0 %>
+                        <tr>
+                    <% end %>  
+                 
+                    <% Skill.where("id = '#{t.skill_id}'").each do |x| %>
+                        <td style="font-size: 0.9rem; padding-bottom: 8px; color: black;"><%= x.name %></td>
+                    <% end %>
+
+                    <% if next_end  == i %>
+                        <% next_end = next_end + 4 %>
+                        </tr>
+                    <% end %> 
+                 <% end %>
+             	</tr>
+         	</tbody>
+        </table>
+	</div>
+</div>
+
+<% if @resume.experiences.length != 0 %>
+	<div class="row">
+		
+			<div class="col-3">
+				<h6>WORK HISTORY</h6>
+			</div>
+			<div class="col-9">
+				<% @resume.experiences.each do |t| %>
+					<div class="text-uppercase" style="color: #696969;">
+						<%= t.startdate %> - <%= t.enddate %>
+					</div>
+					<div>
+						 <b><%= t.job_title %></b> | <%= t.company %>
+					</div>
+					<div>
+						<%= t.description %>
+					</div>
+
+				<% end %>
+			</div>
+	</div>
+<% end %>
+
+<br>
+
+<% if @resume.otherprojects.length != 0 %>
+	<div class="row">
+		
+			<div class="col-3">
+				<h6>PROJECTS</h6>
+			</div>
+			<div class="col-9">
+				<% @resume.otherprojects.each do |t| %>
+					
+					<div>
+						 <b><%= t.name %></b>
+					</div>
+					<div>
+						<span><%= t.desc1 %></span><br>
+						<span><%= t.desc2 %></span><br>
+						<span><%= t.desc3 %></span><br>
+						<span><%= t.desc4 %></span>
+					</div>
+
+				<% end %>
+			</div>
+	</div>
+<% end %>
+
+<br>
+
+<% if @resume.educations.length != 0  %>
+	<div class="row">
+		
+			<div class="col-3">
+				<h6>PROJECTS</h6>
+			</div>
+			<div class="col-9">
+				<% @resume.educations.each do |t| %>
+					
+					<div>
+						 <b><%= t.name %></b>
+					</div>
+					<div class="row">
+						<div class="col-10">
+							<span><%= t.degree %></span>
+						</div>
+						<div class="col-2">
+							<span class="text-right"><%= t.year_graduated %></span>
+						</div>
+					</div>
+
+				<% end %>
+			</div>
+	</div>
+<% end %>
+
+<br><br>
+
+
+
+
+
