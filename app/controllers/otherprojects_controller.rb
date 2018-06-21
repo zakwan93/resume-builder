@@ -25,6 +25,7 @@ class OtherprojectsController < ApplicationController
 	end
 	
 	def edit
+		@user_resume = User.find(current_user.id).resume.id
 		@user_resume_otherproject = Otherproject.find(params[:id])
 	end
 
