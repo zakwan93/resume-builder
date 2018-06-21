@@ -1,6 +1,4 @@
 
-	<hr class="uk-divider-icon">
-
 	<div class="uk-container uk-animation-slide-left">
 		<div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
 			<div>
@@ -128,10 +126,10 @@
 
 
 
-<div class="uk-child-width-1-2@m uk-grid-small uk-grid-match" uk-grid>
+<div class="uk-child-width-1-2@m uk-grid-small uk-grid-match" uk-grid style="line-height: 0px;">
 	<% if @user_resume_introductions && @user_resume_objective != nil %>
 		<div class="uk-animation-toggle">
-			<a class="uk-button uk-button-primary myButton" <%= link_to 'View Your Resume', user_path(:id => @current_user.id) %> </a>
+			<a class="uk-button uk-button-primary myButton" <%= link_to 'Template 1', user_path(:id => @current_user.id) %> </a>
 		</div><br>
 		<% else %>
 		<strong style="color: #1e87f0;">Note</strong> :- Fill out <strong style="color: #f0506e;">B</strong>asic<strong style="color: #f0506e;">I</strong>nfo and <strong style="color: #f0506e;">S</strong>ummary section to <strong style="color: #f0506e;">V</strong>iew your <strong style="color: #f0506e;">R</strong>esume.<br>
@@ -149,7 +147,7 @@
 
 	<% if @user_resume_introductions && @user_resume_objective != nil %>
 		<div class="uk-animation-toggle">
-			<a class="uk-button uk-button-primary myButton" <%= link_to 'New Template', newtemplate_path(:id => @current_user.id) %> </a>
+			<a class="uk-button uk-button-primary myButton" <%= link_to 'Template 2', newtemplate_path(:id => @current_user.id) %> </a>
 		</div><br>
 		<% else %>
 		<strong style="color: #1e87f0;">Note</strong> :- Fill out <strong style="color: #f0506e;">B</strong>asic<strong style="color: #f0506e;">I</strong>nfo and <strong style="color: #f0506e;">S</strong>ummary section to <strong style="color: #f0506e;">V</strong>iew your <strong style="color: #f0506e;">R</strong>esume.<br>
