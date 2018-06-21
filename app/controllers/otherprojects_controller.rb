@@ -46,7 +46,7 @@ class OtherprojectsController < ApplicationController
     	@resume = Resume.find_by(user: params[:resume_id])
   	end
 
-  	def set_reskill
+  	def set_otherpoject
     	@otherprojects = Otherproject.find_by(resume: params[:id])
   	end
 

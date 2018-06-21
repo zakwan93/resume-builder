@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   get "review", to: "users#review"
   get "newtemplate", to: "users#newtemplate"
 
-
   resources :resumes
   resources :introductions
   resources :objectives
