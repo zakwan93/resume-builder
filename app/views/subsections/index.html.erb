@@ -1,0 +1,26 @@
+  
+<div class="uk-container" style="margin-bottom: 10px;">
+
+      <h1 class="uk-article-title" style="font-size: 24px;margin-bottom:10px;"><b>SECTION</b></h1>
+    <% @user_resume_subsections.each do |t| %>
+      <strong style="line-height: 0;"><%= t.name %></strong>
+      <ul class="uk-list uk-list-bullet" style="margin-top: 0px;">
+        <% unless t.desc1.blank? %>
+          <li><%= t.desc1 %></li>
+        <% end %>
+        <% unless t.desc2.blank? %>
+          <li><%= t.desc2 %></li>
+        <% end %>
+        <% unless t.desc3.blank? %>
+          <li><%= t.desc3 %></li>
+        <% end %>
+        <% unless t.desc4.blank? %>
+          <li><%= t.desc4 %></li>
+        <% end %>
+      </ul>
+      <a <%= link_to "Edit", edit_subsection_path(t) %></a> | 
+      <a <%= link_to "Remove", subsection_path(t), method: :delete, data: { confirm: "Are you sure?" } %></a> 
+      <br>   
+    <% end %>
+
+</div>

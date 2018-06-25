@@ -8,5 +8,7 @@ class Resume < ApplicationRecord
 	has_many :otherprojects
 	has_many :educations
 	has_many :experiences
+	has_many :sections
+	has_many :subsections, :through => :sections
 	belongs_to :user
 end

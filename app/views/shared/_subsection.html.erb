@@ -1,0 +1,35 @@
+<br>
+
+<div class="uk-container" style="margin-bottom: 10px;">
+	<% if @user_resume_subsections.length != 0 %>
+		<% @user_resume_sections.each do |section| %>
+			<article class="uk-article">
+		    	<h1 class="uk-article-title uk-text-uppercase" style="font-size: 16px;margin-bottom:10px;"><b><%= section.name %> </b></h1>
+					<% section.subsections.each do |subsection| %>
+						<span style="font-size: 12px; margin-top: 0px; color: black;">
+							<%= subsection.name %>
+						</span>
+						<ul class="uk-list uk-list-none" style="margin-top: 0px; margin-bottom: 4px; font-size: 12px; color: black; list-style: none;">
+							<% unless subsection.desc1.blank? %>
+						    	<li style="margin-top: 2px;"> - <%= subsection.desc1 %></li>
+						    <% end %>
+						    <% unless subsection.desc2.blank? %>
+						    	<li style="margin-top: 2px;"> - <%= subsection.desc2 %></li>
+						    <% end %>
+						    <% unless subsection.desc3.blank? %>
+						    	<li style="margin-top: 2px;"> - <%= subsection.desc3 %></li>
+						    <% end %>
+						    <% unless subsection.desc4.blank? %>
+						    	<li style="margin-top: 2px;"> - <%= subsection.desc4 %></li>
+						 	<% end %>
+						</ul>
+						<div class="uk-text-right" style="line-height: 0.0;">
+                      		<span style=" font-size: 12px; color:black;">
+                      			<%= subsection.date %>
+                      		</span>
+                  		</div>
+					<% end %>
+				<% end %>
+			</article>
+	<% end %>  
+</div>

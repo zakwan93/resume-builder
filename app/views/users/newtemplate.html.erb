@@ -2,7 +2,7 @@
 <style type="text/css">
 	span
 	{
-		font-size: 11px;
+		font-size: 14px !important;
 	}
 	
 	.borderless td, .borderless th 
@@ -11,11 +11,11 @@
 	}
 	.col-3 h6
 	{
-		font-size: 14px !important;
+		font-size: 18px !important;
 	}
 	a
 	{
-		font-size: 14px;
+		font-size: 16px;
 	}
 </style>
 
@@ -84,7 +84,7 @@
                     <% end %>  
                  
                     <% Skill.where("id = '#{t.skill_id}'").each do |x| %>
-                        <td style="font-size: 11px; padding-bottom: 8px; color: black;"><%= x.name %></td>
+                        <td style="font-size: 14px; padding-bottom: 8px; color: black;"><%= x.name %></td>
                     <% end %>
 
                     <% if next_end  == i %>
@@ -112,7 +112,7 @@
 					<div style="font-size: 14px;">
 						 <b><%= t.job_title %></b> | <%= t.company %>
 					</div>
-					<div style="font-size: 11px;line-height: 1.2; margin-bottom: 12px; ">
+					<div style="font-size: 14px;line-height: 1.2; margin-bottom: 12px; ">
 						<%= t.description %>
 					</div>
 				<% end %>
@@ -136,8 +136,12 @@
 					<div style="line-height: 1; margin-bottom: 12px;">
 						<span><%= t.desc1 %></span><br>
 						<span><%= t.desc2 %></span><br>
-						<span><%= t.desc3 %></span><br>
-						<span><%= t.desc4 %></span>
+						<% unless t.desc3.blank? %>
+							<span><%= t.desc3 %></span><br>
+						<% end %>
+						<% unless t.desc4.blank? %>
+							<span><%= t.desc4 %></span>
+						<% end %>
 					</div>
 				<% end %>
 			</div>
@@ -149,7 +153,7 @@
 	<div class="row">
 		
 			<div class="col-3">
-				<h6>PROJECTS</h6>
+				<h6>EDUCATIONS</h6>
 			</div>
 			<div class="col-9">
 				<% @resume.educations.each do |t| %>
@@ -169,6 +173,47 @@
 			</div>
 	</div>
 <% end %>
+
+
+<% if @resume.sections.length != 0 %>
+	<div class="row" style="margin-top: 12px;">
+		<% @user_resume_sections.each do |section| %>
+			<div class="col-3">
+				<h6 class="text-uppercase"><%= section.name %></h6>
+			</div>
+			<div class="col-9">
+				<% section.subsections.each do |subsection| %>
+					<div class="row" style="line-height: 1; margin-bottom: 12px;">
+						<div class="col-10">
+							<div style="font-size: 14px;">
+						 		<%= subsection.name %>
+							</div>
+						</div>
+						<div class="col-2">
+							<span class="text-right"><%= subsection.date %></span>
+						</div>
+					</div>
+					
+					<div style="line-height: 1; margin-bottom: 12px;">
+						<% unless subsection.desc1.blank? %>
+							<span><%= subsection.desc1 %></span><br>
+						<% end %>
+						<% unless subsection.desc1.blank? %>
+							<span><%= subsection.desc2 %></span><br>
+						<% end %>
+						<% unless subsection.desc1.blank? %>
+							<span><%= subsection.desc3 %></span><br>
+						<% end %>
+						<% unless subsection.desc1.blank? %>
+							<span><%= subsection.desc4 %></span>
+						<% end %>
+					</div>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
+<% end %>
+
 
 <br><br>
 

@@ -1,0 +1,40 @@
+<div class= "uk-container uk-background-muted uk-padding uk-panel" style="padding: 50px;margin-top: 80px;">
+    <h2> Add your Sub Section here </h2><br>
+        <%= form_for @user_resume_subsection do |f| %>
+
+            <div class="uk-form-controls">
+                <input class="uk-input" type="text" placeholder="Title"
+                <%= f.text_field :name, :required => true %>
+            </div>
+            <br>
+            Description <elm style= "color: red;">(NOTE :- DESCRIPTION IS OPTIONAL)</elm>
+        
+            <div class="uk-form-controls" style="margin-bottom: 5px;">
+                <input class="uk-input" type="text" placeholder="Description of your Sub Section"
+                <%= f.text_field :desc1 %>
+            </div>
+            <div class="uk-form-controls" style="margin-bottom: 5px;">
+                <input class="uk-input" type="text" placeholder="Optional"
+                <%= f.text_field :desc2 %>
+            </div>
+            <div class="uk-form-controls" style="margin-bottom: 5px;">
+                <input class="uk-input" type="text" placeholder="Optional"
+                <%= f.text_field :desc3 %>
+            </div>
+            <div class="uk-form-controls" style="margin-bottom: 5px;">
+                <input class="uk-input" type="text" placeholder="Optional"
+                <%= f.text_field :desc4 %>
+            </div>
+            <div class="uk-form-controls" style="margin-bottom: 5px;">
+                <input class="uk-input" type="text" placeholder="EX. June,2015 (OPTIONAL)"
+                <%= f.text_field :date %>
+            </div>
+             
+             <br>
+            <button class="uk-button uk-button-primary"
+                 <%= submit_tag "Add" %> ADD
+             </button>
+    
+        <% end %>
+</div>
+
