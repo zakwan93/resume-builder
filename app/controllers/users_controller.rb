@@ -7,6 +7,8 @@ class UsersController < ApplicationController
     @user_resume_otherprojects = current_user.resume.otherprojects
     @user_resume_education = current_user.resume.educations
     @user_resume_reskills = current_user.resume.reskills
+    @user_resume_sections = current_user.resume.sections
+    @user_resume_subsections = current_user.resume.subsections
 
      respond_to do |format|
       format.html
@@ -25,6 +27,8 @@ class UsersController < ApplicationController
 
   def newtemplate
     @resume = current_user.resume
+     @user_resume_sections = current_user.resume.sections
+    @user_resume_subsections = current_user.resume.subsections
     # @user_resume_introduction = current_user.resume.introduction
     # @user_resume_objective = current_user.resume.objective
     # @user_resume_experiences = current_user.resume.experiences
@@ -58,6 +62,8 @@ class UsersController < ApplicationController
     @user_resume_experiences = current_user.resume.experiences
     @user_resume_otherprojects = current_user.resume.otherprojects
     @user_resume_education = current_user.resume.educations
+    @user_resume_sections = current_user.resume.sections
+    @user_resume_subsections = current_user.resume.subsections
   end
 
   def edit
@@ -67,6 +73,8 @@ class UsersController < ApplicationController
     @user_resume_experiences = current_user.resume.experiences
     @user_resume_otherprojects = current_user.resume.otherprojects
     @user_resume_education = current_user.resume.educations
+    @user_resume_sections = current_user.resume.sections
+    @user_resume_subsections = current_user.resume.subsections
   end
 
   def create

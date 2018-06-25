@@ -18,6 +18,10 @@ Rails.application.routes.draw do
   resources :projects
   resources :otherprojects
   resources :educations
-  resources :reskills 
+  resources :reskills
+  resources :sections do
+    resources :subsections, only: [:new, :create]
+  end
+  resources :subsections, only:[:index, :edit, :update, :destroy]
   resources :users
 end

@@ -1,0 +1,23 @@
+
+<div class= "uk-container uk-background-muted uk-padding uk-panel" style="padding: 50px;margin-top: 150px;">
+    <h2> Add your own Section here </h2><br>
+        <%= form_for @sections do |f| %>
+
+            <%= f.hidden_field :resume_id, :value => @user_resume %>
+             
+             Section Name
+            <%= f.hidden_field :resume_id, :value => @user_resume %>
+             
+            <div class="uk-form-controls">
+                <input class="uk-input" type="text" placeholder="Name"
+                <%= f.text_field :name, :required => true %> 
+            </div>
+
+            <br>
+            <button class="uk-button uk-button-primary"
+                 <%= submit_tag "Add" %> ADD
+             </button>
+    
+        <% end %>
+        
+</div>
